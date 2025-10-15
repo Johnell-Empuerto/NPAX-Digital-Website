@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion as Motion } from 'framer-motion';
 import HeroVideo from '../assets/video/hero-video.mp4';
+import herothumbnail from '../assets/images/hero-thumbnail.png';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,15 +28,25 @@ const childVariants = {
 };
 
 const Hero = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef(null);
+
+  const handleVideoLoaded = () => {
+    setVideoLoaded(true);
+  };
+
   return (
     <div className="hero relative h-[100dvh] overflow-hidden">
       <video
+        ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover"
         src={HeroVideo}
         autoPlay
         loop
         muted
         playsInline
+        onLoadedData={handleVideoLoaded}
+        poster={herothumbnail}
       />
 
       {/* 🖼️ Overlay (optional, for readability) */}
@@ -46,7 +57,7 @@ const Hero = () => {
           className="hero-con text-white h-[100%] flex justify-center items-center flex-col gap-[20px] text-center"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={videoLoaded ? "visible" : "hidden"}
         >
           <Motion.h2
             className="text-[50px] font-(family-name:--secondary-font) w-[730px] font-bold text-sky-400"
