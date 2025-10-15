@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+/* Define your theme tokens */
+@theme {
+  --primary-font: "Inter", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+  --tertiary-font: "Open Sans", sans-serif;
+  --primary-font-size: 18px;
+  --secondary-font-size: 20px;
+  --tertiary-font-size: 18px;
+  --primary-color: #38bdf8;
+}
+
+html {
+  font-family: var(--secondary-font);
+}
+
+/* Add custom reusable components */
+@layer components {
+  .wrapper {
+    @apply max-w-[1400px] relative mx-auto;
+  }
+  
+  .btn {
+    @apply bg-[#2B3692] text-white rounded-md text-[18px] px-10 py-2.5;
+  }
+
+  a.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    display: none !important;
+  }
+
+  .goog-te-combo {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg fill='%232B3692' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") 
+              no-repeat right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2rem; /* make space for arrow */
+}
+
+}
