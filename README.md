@@ -1,16 +1,98 @@
-# React + Vite
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# NPAX Digital Website
 
-Currently, two official plugins are available:
+🚀 **Future-Proof Your Business with Our Amazing Solutions™**
+This project is a modern company website built with **React + Vite**, showcasing tailored IT solutions for businesses of all sizes. It highlights NPAX’s expertise in digital transformation, technology-driven growth, and innovative solutions designed to empower organizations across industries.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌐 Website Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The NPAX Digital Website is designed to present:
 
-## Expanding the ESLint configuration
+* 🎥 **Hero Section with Video Background**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  * A sleek landing section with motion animations powered by **Framer Motion**.
+  * Engaging video background for a modern and dynamic user experience.
+
+* 🏢 **Who We Serve**
+
+  * Manufacturing & Production
+  * Local & International Businesses
+  * SMBs, SMEs, & Large Enterprises
+  * Product & Service Providers
+  * Government & Public Sector
+  * Logistics & Distribution
+
+* ✨ **Key Features**
+
+  * Smooth animations using **Framer Motion**.
+  * Responsive UI with **TailwindCSS**.
+  * Optimized media handling for images, icons, and videos.
+  * Clean component structure for scalability.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend Framework:** React + Vite
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion
+* **Package Management:** npm
+* **Linting & Code Style:** ESLint
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── assets/          # Images, icons, and videos
+ ├── components/      # Reusable components (Header, Footer, etc.)
+ ├── sections/        # Page sections (Hero, Bottom, Middle, etc.)
+ ├── css/             # Custom styles
+ ├── App.jsx          # Main app component
+ └── main.jsx         # React DOM entry point
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Johnell-Empuerto/NPAX-Digital-Website.git
+cd NPAX-Digital-Website
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
+
+```bash
+npm run dev
+```
+
+### 4. Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## 📖 About
+
+NPAX Digital Website is designed to:
+
+* Deliver **tailored IT solutions** for enterprises.
+* Support **digital transformation** initiatives.
+* Provide scalable, smart, and **future-proof business solutions**.
+
+---
