@@ -4,6 +4,11 @@ import HR_Management from '../assets/video/HR_Management.mp4';
 import Digital_Transformation from '../assets/video/Digital_Transformation.mp4';
 import Accounting_Solution from '../assets/video/Accounting_Solution.mp4';
 import Transforming_Data from '../assets/video/Transforming_Data.mp4';
+// Add poster imports - create low-res thumbnail images for each video
+import HR_Poster from '../assets/images/hr_management_poster.png';
+import Accounting_Poster from '../assets/images/accounting_solution_poster.png';
+import Data_Poster from '../assets/images/transforming_data_poster.png';
+import Digital_Poster from '../assets/images/digital_transformation_poster.png';
 import LazyVideo from '../components/LazyVideo'; // Adjust the path if needed
 
 const rowVariants = {
@@ -41,6 +46,8 @@ const Middle = () => {
               <LazyVideo
                 src={HR_Management}
                 className="w-full h-auto rounded-2xl shadow-lg object-cover"
+                poster={HR_Poster} // Add poster for quick placeholder
+                preload="none" // Prevent preloading until in view
               />
             </div>
             <div className="middle-box w-full md:w-1/2 text-center md:text-left p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -89,7 +96,8 @@ const Middle = () => {
               <LazyVideo
                 src={Accounting_Solution}
                 className="w-full h-auto rounded-2xl shadow-lg object-cover"
-                // poster="/path/to/accounting-thumbnail.jpg" // Add if you have one
+                poster={Accounting_Poster} // Add poster
+                preload="none"
               />
             </div>
           </Motion.div>
@@ -106,7 +114,8 @@ const Middle = () => {
               <LazyVideo
                 src={Transforming_Data}
                 className="w-full h-auto rounded-2xl shadow-lg object-cover"
-                // poster="/path/to/data-thumbnail.jpg" // Add if you have one
+                poster={Data_Poster} // Add poster
+                preload="none"
               />
             </div>
             <div className="middle-box w-full md:w-1/2 text-center md:text-left p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -155,7 +164,8 @@ const Middle = () => {
               <LazyVideo
                 src={Digital_Transformation}
                 className="w-full h-auto rounded-2xl shadow-lg object-cover"
-                // poster="/path/to/digital-thumbnail.jpg" // Add if you have one
+                poster={Digital_Poster} // Add poster
+                preload="none"
               />
             </div>
           </Motion.div>

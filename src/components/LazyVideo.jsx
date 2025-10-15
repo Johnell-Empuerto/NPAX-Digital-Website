@@ -1,51 +1,31 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useEffect } from 'react';
 
-const LazyVideo = ({ src, poster, className }) => {
+const LazyVideo = ({ src, poster, className, preload = 'none' }) => {
   const videoRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect(); // Stop observing once loaded to save resources
-          }
-        });
-      },
-      { threshold: 0.25 } // Trigger when 25% of the video is in view
-    );
-
-    const currentRef = videoRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-      // Check if already visible on mount (e.g., for videos at the top of the page)
-      if (currentRef.getBoundingClientRect().top < window.innerHeight) {
-        setIsVisible(true);
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        videoRef.current.src = src; // Load src only when in view
+        videoRef.current.load();
         observer.disconnect();
       }
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.disconnect();
-      }
-    };
-  }, []);
+    });
+    observer.observe(videoRef.current);
+    return () => observer.disconnect();
+  }, [src]);
 
   return (
     <video
       ref={videoRef}
       className={className}
-      poster={poster} // Use a thumbnail for a preview (optional but recommended)
+      poster={poster}
+      preload={preload}
       autoPlay
       loop
       muted
       playsInline
-    >
-      {isVisible && <source src={src} type="video/mp4" />}
-    </video>
+    />
   );
 };
 
