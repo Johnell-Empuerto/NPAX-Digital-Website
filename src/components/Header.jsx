@@ -155,11 +155,11 @@ const Header = () => {
       <div className="wrapper max-w-7xl mx-auto px-4">
         <div className="header-con flex justify-between items-center h-[80px]">
           <div className="logo">
-            <img className="w-[175px]" src={logo} alt="NPAX Logo" />
+            <img className="w-[175px] max-[1100px]:w-[140px]" src={logo} alt="NPAX Logo" />
           </div>
           {/* Desktop Nav */}
           <nav className="nav hidden md:flex font-(family-name:--primary-font) text-white">
-            <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-white">
+            <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-white max-[1200px]:gap-[20px] max-[1100px]:gap-[15px] max-[1100px]:text-[16px]">
               <li><a href="/about" className="hover:text-sky-400 transition-colors duration-300">About Us</a></li>
               <li className="relative group">
                 <a href="/products" className="hover:text-sky-400 transition-colors duration-300 flex items-center cursor-pointer">
