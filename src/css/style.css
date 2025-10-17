@@ -19,7 +19,7 @@ html {
 /* Add custom reusable components */
 @layer components {
   .wrapper {
-    @apply max-w-[1400px] relative mx-auto;
+    @apply max-w-[1500px] relative mx-auto;
   }
   
   .btn {
