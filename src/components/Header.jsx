@@ -5,6 +5,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isAdvancedOpen, setIsAdvancedOpen] = useState(false);
+  const [isBlogsOpen, setIsBlogsOpen] = useState(false);
 
   useEffect(() => {
     // Google Translate Initialization
@@ -192,7 +193,26 @@ const Header = () => {
                   </ul>
                 </div>
               </li>
-              <li><a href="/blogs" className="hover:text-sky-400 transition-colors duration-300">Blogs</a></li>
+              <li className="relative group">
+                <a href="/blogs" className="hover:text-sky-400 transition-colors duration-300 flex items-center cursor-pointer">
+                  Blogs
+                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                <div className="absolute left-0 top-full hidden group-hover:block bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2">
+                  <ul className="space-y-2 text-sm">
+                    <li className="text-[#00bbff] font-semibold mb-1">News and Insights</li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Recent Blogs</a></li>
+                    <li className="text-[#00bbff] font-semibold mt-3 mb-1">News & Events</li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Advanced Analytics</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Digital Transformation</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Human Resource Information</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Enterprise Resource Planning</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Accounting</a></li>
+                  </ul>
+                </div>
+              </li>
               <li><a href="/careers" className="hover:text-sky-400 transition-colors duration-300">Careers</a></li>
               <li><a href="/contact" className="hover:text-sky-400 transition-colors duration-300">Contact Us</a></li>
             </ul>
@@ -254,7 +274,29 @@ const Header = () => {
                   </ul>
                 )}
               </li>
-              <li><a href="/blogs" className="hover:text-sky-400 transition-colors">Blogs</a></li>
+              <li>
+                <button 
+                  onClick={() => setIsBlogsOpen(!isBlogsOpen)} 
+                  className="w-full text-left hover:text-sky-400 transition-colors flex items-center justify-between"
+                >
+                  Blogs
+                  <svg className={`w-4 h-4 transition-transform ${isBlogsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isBlogsOpen && (
+                  <ul className="mt-2 space-y-2 pl-4 text-sm normal-case border-l border-sky-400/50">
+                    <li className="text-[#00bbff] font-semibold mb-1">News and Insights</li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Recent Blogs</a></li>
+                    <li className="text-[#00bbff] font-semibold mt-3 mb-1">News & Events</li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Advanced Analytics</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Digital Transformation</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Human Resource Information</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Enterprise Resource Planning</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Accounting</a></li>
+                  </ul>
+                )}
+              </li>
               <li><a href="/careers" className="hover:text-sky-400 transition-colors">Careers</a></li>
               <li><a href="/contact" className="hover:text-sky-400 transition-colors">Contact Us</a></li>
             </ul>
