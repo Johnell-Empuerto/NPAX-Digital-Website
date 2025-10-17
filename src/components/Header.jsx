@@ -138,15 +138,15 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="header sticky top-0 bg-white shadow-md z-20">
+    <header className="header sticky top-0 bg-black shadow-md z-20">
       <div className="wrapper max-w-7xl mx-auto px-4">
         <div className="header-con flex justify-between items-center h-[80px]">
           <div className="logo">
             <img className="w-[175px]" src={logo} alt="NPAX Logo" />
           </div>
           {/* Desktop Nav */}
-          <nav className="nav hidden md:flex font-(family-name:--primary-font)">
-            <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-gray-800">
+          <nav className="nav hidden md:flex font-(family-name:--primary-font) text-white">
+            <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-white">
               <li><a href="/about" className="hover:text-sky-400 transition-colors duration-300">About Us</a></li>
               <li><a href="/products" className="hover:text-sky-400 transition-colors duration-300">Products and Services</a></li>
               <li><a href="/blogs" className="hover:text-sky-400 transition-colors duration-300">Blogs</a></li>

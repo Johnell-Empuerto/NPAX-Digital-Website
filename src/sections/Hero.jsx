@@ -36,10 +36,10 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero relative h-[100dvh] overflow-hidden">
+    <div className="hero relative h-[100dvh] overflow-hidden bg-black">
       <video
         ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover px-5 rounded-[20px]"
         src={HeroVideo}
         autoPlay
         loop

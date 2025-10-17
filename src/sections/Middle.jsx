@@ -29,7 +29,9 @@ const Middle = () => {
   return (
     <div className="middle overflow-hidden py-10 bg-[#000]">
       <div className="wrapper max-w-7xl mx-auto px-4">
-        <div className="curvebgdesign relative bg-white/10 backdrop-blur-xl rounded-[20px] rounded-tl-0 shadow-lg overflow-hidden">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-white/10">
+
+
           
           {/* Featured Badge in Top Left - Reference Structure */}
           <div className="folder_head flex flex-row flex-nowrap">
@@ -59,7 +61,7 @@ const Middle = () => {
           </p>
 
           {/* Content Rows */}
-          <div className="middle-con space-y-12 px-8">
+          <div className="middle-con space-y-12 px-8 pb-10">
 
             {/* Row 1: Video - Content */}
             <Motion.div
