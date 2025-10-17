@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion as Motion } from 'framer-motion';
 import contact from '../assets/images/contact-min.jpg';
 import corner_upper_left_black from '../assets/images/corner_upper_left_black.webp';
@@ -28,6 +28,33 @@ const childVariants = {
 };
 
 const Contact = () => {
+  useEffect(() => {
+    // Load Google reCAPTCHA script dynamically
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    // Cleanup script on unmount
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const recaptchaResponse = window.grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+      alert('Please complete the reCAPTCHA.');
+      return;
+    }
+    // Here, send the form data + recaptchaResponse token to your backend for verification
+    console.log('reCAPTCHA token:', recaptchaResponse);
+    // Example: fetch('/api/submit', { method: 'POST', body: JSON.stringify({ ...formData, 'g-recaptcha-response': recaptchaResponse }) })
+    alert('Form submitted successfully! (Token: ' + recaptchaResponse + ')');
+  };
+
   return (
     <div className='contact overflow-hidden py-10 bg-[#000]'>
       <div className="wrapper max-w-7xl mx-auto px-4">
@@ -104,48 +131,57 @@ const Contact = () => {
               className="form bg-white p-5 lg:p-11 rounded-r-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
               variants={childVariants}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <input 
+                    type="text" 
+                    className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 transition-colors" 
+                    placeholder="First Name" 
+                    required
+                  />
+                  <input 
+                    type="text" 
+                    className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 transition-colors" 
+                    placeholder="Last Name" 
+                    required
+                  />
+                </div>
                 <input 
                   type="text" 
-                  className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 transition-colors" 
-                  placeholder="First Name" 
+                  className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 mb-4 transition-colors" 
+                  placeholder="Company" 
+                  required
                 />
-                <input 
-                  type="text" 
-                  className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 transition-colors" 
-                  placeholder="Last Name" 
-                />
-              </div>
-              <input 
-                type="text" 
-                className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 mb-4 transition-colors" 
-                placeholder="Company" 
-              />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <input 
-                  type="email" 
-                  className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 transition-colors" 
-                  placeholder="Email Address" 
-                />
-                <input 
-                  type="tel" 
-                  className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 transition-colors" 
-                  placeholder="Contact No." 
-                />
-              </div>
-              <textarea 
-                className="w-full h-32 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-2xl border border-gray-200 focus:outline-none focus:border-sky-400 p-4 mb-4 transition-colors resize-none" 
-                placeholder="Message" 
-              ></textarea>
-              <div className="flex items-center mb-4">
-                <input type="checkbox" id="not-robot" className="mr-2 accent-sky-400" />
-                <label htmlFor="not-robot" className="text-gray-600">I'm not a robot</label>
-                {/* Placeholder for reCAPTCHA */}
-                <img src="https://www.google.com/recaptcha/about/images/reCAPTCHA-badge.svg" alt="reCAPTCHA" className="ml-2 h-6" />
-              </div>
-              <button className="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-300 hover:bg-sky-400 bg-[#2B3692] shadow-sm">
-                Submit
-              </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <input 
+                    type="email" 
+                    className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 transition-colors" 
+                    placeholder="Email Address" 
+                    required
+                  />
+                  <input 
+                    type="tel" 
+                    className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-sky-400 pl-4 transition-colors" 
+                    placeholder="Contact No." 
+                    required
+                  />
+                </div>
+                <textarea 
+                  className="w-full h-32 text-gray-600 placeholder-gray-400 bg-transparent text-lg font-normal leading-7 rounded-2xl border border-gray-200 focus:outline-none focus:border-sky-400 p-4 mb-4 transition-colors resize-none" 
+                  placeholder="Message" 
+                  required
+                ></textarea>
+                <div className="flex items-center mb-4">
+                  {/* reCAPTCHA widget replaces the fake checkbox and image */}
+                  <div className="g-recaptcha" data-sitekey="6LdXRO0rAAAAAFaTiHifbgcvjoUnX3Cp3KQrUYqT"></div>
+                </div>
+                <button 
+                  type="submit"
+                  className="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-300 hover:bg-sky-400 bg-[#2B3692] shadow-sm"
+                >
+                  Submit
+                </button>
+              </form>
             </Motion.div>
           </Motion.div>
         </div>

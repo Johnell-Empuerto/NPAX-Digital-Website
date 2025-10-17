@@ -114,12 +114,22 @@ const Header = () => {
         }
       };
 
+      // Replace "Pumili ng wika" with "Languages"
+      const fixTranslateLabel = () => {
+        const combo = document.querySelector('#google_translate_element .goog-te-combo');
+        if (combo && combo.options[0]) {
+          combo.options[0].text = 'Languages';  // Or whatever custom text you want
+        }
+      };
+
       // Apply styles and re-apply periodically
       addContainerStyles();
       addMenuStyles();
+      fixTranslateLabel();
       const interval = setInterval(() => {
         addContainerStyles();
         addMenuStyles();
+        fixTranslateLabel();
       }, 500);
 
       return () => clearInterval(interval);
