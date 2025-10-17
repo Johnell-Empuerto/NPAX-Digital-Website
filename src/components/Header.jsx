@@ -3,6 +3,8 @@ import logo from '../assets/images/logo.png';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isAdvancedOpen, setIsAdvancedOpen] = useState(false);
 
   useEffect(() => {
     // Google Translate Initialization
@@ -158,7 +160,38 @@ const Header = () => {
           <nav className="nav hidden md:flex font-(family-name:--primary-font) text-white">
             <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-white">
               <li><a href="/about" className="hover:text-sky-400 transition-colors duration-300">About Us</a></li>
-              <li><a href="/products" className="hover:text-sky-400 transition-colors duration-300">Products and Services</a></li>
+              <li className="relative group">
+                <a href="/products" className="hover:text-sky-400 transition-colors duration-300 flex items-center cursor-pointer">
+                  Products and Services
+                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                <div className="absolute left-0 top-full hidden group-hover:block bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2">
+                  <ul className="space-y-2 text-sm">
+                    <li className="relative group/sub">
+                      <a href="#" className="hover:text-sky-400 transition-colors duration-300 flex items-center justify-between">
+                        Advanced Analytics Solutions
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                      <div className="absolute left-full top-0 mt-0 hidden group-hover/sub:block bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out opacity-0 group-hover/sub:opacity-100 transform group-hover/sub:translate-x-0 -translate-x-2">
+                        <ul className="space-y-2 text-sm">
+                          <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">BI and Dashboarding</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Digital Transformation Services</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">HRIS / Payroll System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">ERP System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Accounting System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">IoT System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Managed IT Services</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Paxyroll Cloud Timekeeping</a></li>
+                  </ul>
+                </div>
+              </li>
               <li><a href="/blogs" className="hover:text-sky-400 transition-colors duration-300">Blogs</a></li>
               <li><a href="/careers" className="hover:text-sky-400 transition-colors duration-300">Careers</a></li>
               <li><a href="/contact" className="hover:text-sky-400 transition-colors duration-300">Contact Us</a></li>
@@ -170,7 +203,7 @@ const Header = () => {
           </div>
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden text-gray-800 focus:outline-none"
+            className="md:hidden text-white focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -180,10 +213,47 @@ const Header = () => {
         </div>
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white px-4 py-4 shadow-md">
-            <ul className="flex flex-col gap-4 font-semibold text-[17px] uppercase text-gray-800">
+          <div className="md:hidden bg-black px-4 py-4 shadow-md">
+            <ul className="flex flex-col gap-4 font-semibold text-[17px] uppercase text-white">
               <li><a href="/about" className="hover:text-sky-400 transition-colors">About Us</a></li>
-              <li><a href="/products" className="hover:text-sky-400 transition-colors">Products and Services</a></li>
+              <li>
+                <button 
+                  onClick={() => setIsProductsOpen(!isProductsOpen)} 
+                  className="w-full text-left hover:text-sky-400 transition-colors flex items-center justify-between"
+                >
+                  Products and Services
+                  <svg className={`w-4 h-4 transition-transform ${isProductsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isProductsOpen && (
+                  <ul className="mt-2 space-y-2 pl-4 text-sm normal-case border-l border-sky-400/50">
+                    <li>
+                      <button 
+                        onClick={() => setIsAdvancedOpen(!isAdvancedOpen)} 
+                        className="w-full text-left hover:text-sky-400 transition-colors flex items-center justify-between"
+                      >
+                        Advanced Analytics Solutions
+                        <svg className={`w-4 h-4 transition-transform ${isAdvancedOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {isAdvancedOpen && (
+                        <ul className="mt-1 space-y-1 pl-4 text-xs">
+                          <li><a href="#" className="hover:text-sky-400 transition-colors">BI and Dashboarding</a></li>
+                        </ul>
+                      )}
+                    </li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Digital Transformation Services</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">HRIS / Payroll System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">ERP System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Accounting System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">IoT System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Managed IT Services</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors">Paxyroll Cloud Timekeeping</a></li>
+                  </ul>
+                )}
+              </li>
               <li><a href="/blogs" className="hover:text-sky-400 transition-colors">Blogs</a></li>
               <li><a href="/careers" className="hover:text-sky-400 transition-colors">Careers</a></li>
               <li><a href="/contact" className="hover:text-sky-400 transition-colors">Contact Us</a></li>
