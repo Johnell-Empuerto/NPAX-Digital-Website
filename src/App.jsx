@@ -5,6 +5,8 @@ import Hero from './sections/Hero'
 import Middle from './sections/Middle'
 import Bottom from './sections/Bottom'
 import Testimonial from './sections/Testimonial'
+import Blog from './components/Blog'
+import Contact from './components/Contact'
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
       <Middle />
       <Bottom />
       <Testimonial />
+      <Blog />
+      <Contact />
     </div>
   )
 }
