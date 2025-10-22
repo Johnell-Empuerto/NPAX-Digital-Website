@@ -74,34 +74,36 @@ const Testimonial = () => {
           </p>
 
           {/* Testimonial Card - White bg like content boxes, with enhanced styling */}
-          <Motion.div 
-            className="testimonial-con max-w-4xl mx-auto p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 px-8 pb-10"
-            variants={testimonialVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {/* For multiple testimonials, integrate a carousel (e.g., react-slick). Here, displaying the first; add slider for more. */}
-            <div className="flex flex-col items-center gap-6">
-              <img 
-                src={testimonials[0].image} 
-                alt={testimonials[0].name} 
-                className="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-sky-400" 
-              />
-              <div className="text-center max-w-3xl">
-                <p className="text-[18px] font-(family-name:--secondary-font) text-gray-700 italic mb-6 leading-relaxed">
-                  "{testimonials[0].quote}"
-                </p>
-                <p className="text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692]">
-                  {testimonials[0].name}
-                </p>
-                <p className="text-[16px] font-(family-name:--secondary-font) text-gray-500">
-                  {testimonials[0].title}
-                </p>
+          <div className='mx-[20px]'>
+            <Motion.div 
+              className="testimonial-con max-w-4xl mx-auto p-8 px-[20px] pb-10 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              variants={testimonialVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {/* For multiple testimonials, integrate a carousel (e.g., react-slick). Here, displaying the first; add slider for more. */}
+              <div className="flex flex-col items-center gap-6">
+                <img 
+                  src={testimonials[0].image} 
+                  alt={testimonials[0].name} 
+                  className="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-sky-400" 
+                />
+                <div className="text-center max-w-3xl">
+                  <p className="text-[18px] font-(family-name:--secondary-font) text-gray-700 italic mb-6 leading-relaxed">
+                    "{testimonials[0].quote}"
+                  </p>
+                  <p className="text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692]">
+                    {testimonials[0].name}
+                  </p>
+                  <p className="text-[16px] font-(family-name:--secondary-font) text-gray-500">
+                    {testimonials[0].title}
+                  </p>
+                </div>
               </div>
-            </div>
-            {/* Carousel Note: To add sliding, wrap in a slider component. Example with Framer: Use drag="x" for simple swipe, or add library. */}
-          </Motion.div>
+              {/* Carousel Note: To add sliding, wrap in a slider component. Example with Framer: Use drag="x" for simple swipe, or add library. */}
+            </Motion.div>
+          </div>
         </div>
       </div>
     </div>
