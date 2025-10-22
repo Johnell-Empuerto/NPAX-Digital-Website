@@ -99,7 +99,7 @@ const Middle = () => {
 
             {/* Row 2: Content - Video */}
             <Motion.div
-              className="row flex items-center gap-8"
+              className="flex flex-col-reverse md:flex-row items-center gap-8"
               variants={rowVariants}
               initial="hidden"
               whileInView="visible"
@@ -167,7 +167,7 @@ const Middle = () => {
 
             {/* Row 4: Content - Video */}
             <Motion.div
-              className="row flex items-center gap-8"
+              className="flex flex-col-reverse md:flex-row items-center gap-8"
               variants={rowVariants}
               initial="hidden"
               whileInView="visible"
