@@ -63,7 +63,7 @@ const Hero = () => {
         >
           {/* 🌟 Title */}
           <Motion.h2
-            className="text-sky-400 font-bold font-(family-name:--secondary-font) text-[50px] md:text-[45px] sm:text-[38px] max-w-[730px] w-full max-[700px]:text-[38px] max-[400px]:text-[35px]"
+            className="text-sky-400 font-bold font-(family-name:--secondary-font) text-[50px] md:text-[48px] sm:text-[38px] max-w-[730px] w-full max-[700px]:text-[38px] max-[400px]:text-[35px]"
             variants={childVariants}
           >
             Future-Proof Your Business with Our Amazing Solutions™
