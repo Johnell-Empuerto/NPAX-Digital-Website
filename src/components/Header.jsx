@@ -186,7 +186,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="header sticky top-0 bg-black shadow-md z-20 max-[800px]:pb-[25px]">
+    <header className="header sticky top-0 bg-black shadow-md z-20 ">
       <div className="wrapper max-w-7xl mx-auto px-4">
         <div className="header-con flex justify-between items-center h-[80px]">
           <div className="logo">

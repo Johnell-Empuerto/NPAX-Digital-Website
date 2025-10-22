@@ -14,6 +14,7 @@
 
 html {
   font-family: var(--secondary-font);
+  background: #000;
 }
 
 /* Add custom reusable components */
