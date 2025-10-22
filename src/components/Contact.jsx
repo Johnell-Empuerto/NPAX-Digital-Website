@@ -95,7 +95,7 @@ const Contact = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <Motion.div 
-              className="img relative h-full overflow-hidden rounded-l-2xl" // Consistent rounding
+              className="img relative h-full overflow-hidden rounded-l-2xl max-[1023px]:rounded-none max-[1023px]:rounded-tl-[20px] max-[1023px]:rounded-tr-[20px]" // Consistent rounding
               variants={childVariants}
             >
               <img 
@@ -128,7 +128,7 @@ const Contact = () => {
               </div>
             </Motion.div>
             <Motion.div 
-              className="form bg-white p-5 lg:p-11 rounded-r-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="form bg-white p-5 lg:p-11 rounded-r-2xl shadow-md hover:shadow-xl transition-shadow duration-300 max-[1023px]:rounded-none max-[1023px]:rounded-bl-[20px] max-[1023px]:rounded-br-[20px]"
               variants={childVariants}
             >
               <form onSubmit={handleSubmit}>
