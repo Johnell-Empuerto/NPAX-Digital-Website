@@ -1,5 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { motion as Motion } from 'framer-motion';
 import logo from '../assets/images/logo.png';
+import corner_upper_left_black from '../assets/images/corner_upper_left_black.webp';
+
+// Animation variants for mobile menu
+const menuVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  },
+};
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,12 +26,21 @@ const Header = () => {
     // Google Translate Initialization
     window.googleTranslateElementInit = () => {
       new window.google.translate.TranslateElement({
-        pageLanguage: 'en', // Default language
-        includedLanguages: 'en,es,fr,de,ar,hi,zh-CN,ru,pt,ja', // Add more languages as needed
-        layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL, // Changed to HORIZONTAL for flags and simpler look
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,de,ar,hi,zh-CN,ru,pt,ja',
+        layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL,
         autoDisplay: false,
         multilanguagePage: true
       }, 'google_translate_element');
+
+      // Initialize mobile translate widget
+      new window.google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,de,ar,hi,zh-CN,ru,pt,ja',
+        layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+        autoDisplay: false,
+        multilanguagePage: true
+      }, 'google_translate_element_mobile');
     };
 
     // Load Google Translate script
@@ -28,63 +52,64 @@ const Header = () => {
       document.body.appendChild(script);
     }
 
-    // Function to inject custom styles for a clean, Elfsight-like appearance
+    // Function to inject custom styles for Google Translate
     const styleGoogleTranslate = () => {
-      // Style the main container (button-like with current language and dropdown)
       const addContainerStyles = () => {
-        const container = document.querySelector('#google_translate_element .goog-te-combo');
-        if (container) {
-          // Make it look like a simple rounded button
-          container.style.backgroundColor = '#f0f9ff'; // Light sky-blue
-          container.style.border = '1px solid #38bdf8'; // Sky-blue border
-          container.style.borderRadius = '9999px'; // Pill-shaped
-          container.style.padding = '6px 12px';
-          container.style.fontFamily = 'var(--primary-font)';
-          container.style.fontSize = '14px';
-          container.style.color = '#2B3692'; // Dark blue text
-          container.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)'; // Subtle shadow for depth
-          container.style.transition = 'all 0.3s ease';
-          container.style.cursor = 'pointer';
-
-          // Hide unnecessary elements if any
-          const gadget = document.querySelector('.goog-te-gadget');
-          if (gadget) {
-            gadget.style.fontSize = '0'; // Hide "Powered by" text
-          }
-
-          // Hover effect
-          container.addEventListener('mouseover', () => {
-            container.style.backgroundColor = '#e0f2fe';
-            container.style.borderColor = '#0ea5e9';
-            container.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
-          });
-          container.addEventListener('mouseout', () => {
+        const containers = [
+          document.querySelector('#google_translate_element .goog-te-combo'),
+          document.querySelector('#google_translate_element_mobile .goog-te-combo')
+        ];
+        containers.forEach(container => {
+          if (container) {
             container.style.backgroundColor = '#f0f9ff';
-            container.style.borderColor = '#38bdf8';
+            container.style.border = '1px solid #38bdf8';
+            container.style.borderRadius = '9999px';
+            container.style.padding = '6px 12px';
+            container.style.fontFamily = 'var(--primary-font)';
+            container.style.fontSize = '14px';
+            container.style.color = '#2B3692';
             container.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
-          });
-        }
+            container.style.transition = 'all 0.3s ease';
+            container.style.cursor = 'pointer';
+
+            container.addEventListener('mouseover', () => {
+              container.style.backgroundColor = '#e0f2fe';
+              container.style.borderColor = '#0ea5e9';
+              container.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+            });
+            container.addEventListener('mouseout', () => {
+              container.style.backgroundColor = '#f0f9ff';
+              container.style.borderColor = '#38bdf8';
+              container.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+            });
+          }
+        });
+
+        const gadgets = [
+          document.querySelector('#google_translate_element .goog-te-gadget'),
+          document.querySelector('#google_translate_element_mobile .goog-te-gadget')
+        ];
+        gadgets.forEach(gadget => {
+          if (gadget) gadget.style.fontSize = '0';
+        });
       };
 
-      // Style the dropdown menu (iframe)
       const addMenuStyles = () => {
-        const iframe = document.querySelector('#goog-te-menu-frame') || document.querySelector('.goog-te-menu-frame');
-        if (iframe) {
+        const iframes = document.querySelectorAll('.goog-te-menu-frame');
+        iframes.forEach(iframe => {
           const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
           if (iframeDoc) {
-            // Style the menu container
             const menu = iframeDoc.querySelector('body') || iframeDoc.querySelector('.goog-te-menu2');
             if (menu) {
-              menu.style.backgroundColor = '#ffffff'; // White background
-              menu.style.border = '1px solid #38bdf8'; // Sky-blue border
-              menu.style.borderRadius = '12px'; // Softer rounded corners
-              menu.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)'; // Deeper shadow for popup feel
+              menu.style.backgroundColor = '#ffffff';
+              menu.style.border = '1px solid #38bdf8';
+              menu.style.borderRadius = '12px';
+              menu.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
               menu.style.padding = '8px 0';
               menu.style.maxHeight = '300px';
               menu.style.overflowY = 'auto';
             }
 
-            // Style individual menu items
             const menuItems = iframeDoc.querySelectorAll('.goog-te-menu2-item span.text');
             menuItems.forEach(item => {
               item.style.color = '#2B3692';
@@ -93,14 +118,13 @@ const Header = () => {
               item.style.transition = 'background-color 0.2s ease';
               item.style.fontFamily = 'var(--primary-font)';
               item.addEventListener('mouseover', () => {
-                item.style.backgroundColor = '#f0f9ff'; // Light blue hover
+                item.style.backgroundColor = '#f0f9ff';
               });
               item.addEventListener('mouseout', () => {
                 item.style.backgroundColor = 'transparent';
               });
             });
 
-            // Custom scrollbar
             const style = iframeDoc.createElement('style');
             style.textContent = `
               body { top: 0 !important; font-size: 13px !important; }
@@ -114,18 +138,21 @@ const Header = () => {
             `;
             iframeDoc.head.appendChild(style);
           }
-        }
+        });
       };
 
-      // Replace "Pumili ng wika" with "Languages"
       const fixTranslateLabel = () => {
-        const combo = document.querySelector('#google_translate_element .goog-te-combo');
-        if (combo && combo.options[0]) {
-          combo.options[0].text = 'Languages';  // Or whatever custom text you want
-        }
+        const combos = [
+          document.querySelector('#google_translate_element .goog-te-combo'),
+          document.querySelector('#google_translate_element_mobile .goog-te-combo')
+        ];
+        combos.forEach(combo => {
+          if (combo && combo.options[0]) {
+            combo.options[0].text = 'Languages';
+          }
+        });
       };
 
-      // Apply styles and re-apply periodically
       addContainerStyles();
       addMenuStyles();
       fixTranslateLabel();
@@ -138,46 +165,90 @@ const Header = () => {
       return () => clearInterval(interval);
     };
 
-    // Run styling
     styleGoogleTranslate();
 
-    // Cleanup
     return () => {
-      if (document.getElementById('google-translate-script')) {
-        // Optional cleanup
-      }
       delete window.googleTranslateElementInit;
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 800) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <header className="header sticky top-0 bg-black shadow-md z-20">
+    <header className="header sticky top-0 bg-black shadow-md z-20 max-[800px]:pb-[25px]">
       <div className="wrapper max-w-7xl mx-auto px-4">
         <div className="header-con flex justify-between items-center h-[80px]">
           <div className="logo">
             <img className="w-[175px] max-[1100px]:w-[140px]" src={logo} alt="NPAX Logo" />
           </div>
           {/* Desktop Nav */}
-          <nav className="nav hidden md:flex font-(family-name:--primary-font) text-white">
-            <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-white max-[1200px]:gap-[20px] max-[1100px]:gap-[15px] max-[1100px]:text-[16px]">
+          <nav className="nav hidden min-[800px]:flex font-(family-name:--primary-font) text-white">
+            <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-white max-[1200px]:gap-[20px] max-[1100px]:gap-[15px] max-[1100px]:text-[16px] max-[1000px]:text-[14px] max-[1000px]:gap-[5px] max-[900px]:text-[13px]">
               <li><a href="/about" className="hover:text-sky-400 transition-colors duration-300">About Us</a></li>
-              <li className="relative group">
-                <a href="/products" className="hover:text-sky-400 transition-colors duration-300 flex items-center cursor-pointer">
-                  Products and Services
-                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </a>
-                <div className="absolute left-0 top-full hidden group-hover:block bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2">
+              <li 
+                className="relative"
+                onMouseEnter={() => setIsProductsOpen(true)}
+                onMouseLeave={() => setIsProductsOpen(false)}
+              >
+                <div className="flex items-center">
+                  <a 
+                    href="/products" 
+                    className="hover:text-sky-400 transition-colors duration-300"
+                    aria-expanded={isProductsOpen}
+                  >
+                    PRODUCTS AND SERVICES
+                  </a>
+                  <button 
+                    onClick={() => setIsProductsOpen(!isProductsOpen)} 
+                    className="ml-1 text-white hover:text-sky-400 transition-colors duration-300"
+                    aria-expanded={isProductsOpen}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </div>
+                <div 
+                  className={`absolute left-0 top-full bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out ${isProductsOpen ? 'block opacity-100 translate-y-0' : 'hidden opacity-0 translate-y-2'}`}
+                >
                   <ul className="space-y-2 text-sm">
-                    <li className="relative group/sub">
-                      <a href="#" className="hover:text-sky-400 transition-colors duration-300 flex items-center justify-between">
-                        Advanced Analytics Solutions
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                      </a>
-                      <div className="absolute left-full top-0 mt-0 hidden group-hover/sub:block bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out opacity-0 group-hover/sub:opacity-100 transform group-hover/sub:translate-x-0 -translate-x-2">
+                    <li 
+                      className="relative"
+                      onMouseEnter={() => setIsAdvancedOpen(true)}
+                      onMouseLeave={() => setIsAdvancedOpen(false)}
+                    >
+                      <div className="flex items-center justify-between">
+                        <a 
+                          href="#" 
+                          className="hover:text-sky-400 transition-colors duration-300"
+                          aria-expanded={isAdvancedOpen}
+                        >
+                          Advanced Analytics Solutions
+                        </a>
+                        <button 
+                          onClick={() => setIsAdvancedOpen(!isAdvancedOpen)} 
+                          className="text-white hover:text-sky-400 transition-colors duration-300"
+                          aria-expanded={isAdvancedOpen}
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div 
+                        className={`absolute left-full top-0 mt-0 bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out ${isAdvancedOpen ? 'block opacity-100 translate-x-0' : 'hidden opacity-0 -translate-x-2'}`}
+                      >
                         <ul className="space-y-2 text-sm">
                           <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">BI and Dashboarding</a></li>
                         </ul>
@@ -193,14 +264,32 @@ const Header = () => {
                   </ul>
                 </div>
               </li>
-              <li className="relative group">
-                <a href="/blogs" className="hover:text-sky-400 transition-colors duration-300 flex items-center cursor-pointer">
-                  Blogs
-                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </a>
-                <div className="absolute left-0 top-full hidden group-hover:block bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2">
+              <li 
+                className="relative"
+                onMouseEnter={() => setIsBlogsOpen(true)}
+                onMouseLeave={() => setIsBlogsOpen(false)}
+              >
+                <div className="flex items-center">
+                  <a 
+                    href="/blogs" 
+                    className="hover:text-sky-400 transition-colors duration-300"
+                    aria-expanded={isBlogsOpen}
+                  >
+                    Blogs
+                  </a>
+                  <button 
+                    onClick={() => setIsBlogsOpen(!isBlogsOpen)} 
+                    className="ml-1 text-white hover:text-sky-400 transition-colors duration-300"
+                    aria-expanded={isBlogsOpen}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </div>
+                <div 
+                  className={`absolute left-0 top-full bg-black rounded-lg shadow-lg border border-sky-400/30 w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out ${isBlogsOpen ? 'block opacity-100 translate-y-0' : 'hidden opacity-0 translate-y-2'}`}
+                >
                   <ul className="space-y-2 text-sm">
                     <li className="text-[#00bbff] font-semibold mb-1">News and Insights</li>
                     <li><a href="#" className="hover:text-sky-400 transition-colors duration-300">Recent Blogs</a></li>
@@ -217,31 +306,37 @@ const Header = () => {
               <li><a href="/contact" className="hover:text-sky-400 transition-colors duration-300">Contact Us</a></li>
             </ul>
           </nav>
-          <div className="translator hidden md:block min-w-[120px] flex items-center justify-end">
-            {/* Google Translate Widget */}
+          <div className="translator hidden min-[800px]:block min-w-[120px] flex items-center justify-end">
             <div id="google_translate_element"></div>
           </div>
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle with X Animation */}
           <button 
-            className="md:hidden text-white focus:outline-none"
+            className="min-[800px]:hidden text-white focus:outline-none relative w-8 h-8"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            <span className={`absolute right-0 w-6 h-0.5 bg-white rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'rotate-45 top-3.5' : 'top-2'}`}></span>
+            <span className={`absolute right-0 w-6 h-0.5 bg-white rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-0' : 'top-3.5'}`}></span>
+            <span className={`absolute right-0 w-6 h-0.5 bg-white rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? '-rotate-45 top-3.5' : 'top-5'}`}></span>
           </button>
         </div>
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-black px-4 py-4 shadow-md">
-            <ul className="flex flex-col gap-4 font-semibold text-[17px] uppercase text-white">
-              <li><a href="/about" className="hover:text-sky-400 transition-colors">About Us</a></li>
+          <Motion.div 
+            className="min-[800px]:hidden relative bg-[#1a1a1a] rounded-[20px] shadow-lg border mx-4 my-2 px-6 py-4"
+            style={{ backgroundImage: `url(${corner_upper_left_black})`, backgroundPosition: 'left top', backgroundRepeat: 'no-repeat' }}
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <ul className="flex flex-col gap-4 font-(family-name:--primary-font) font-semibold text-[17px] uppercase text-white">
+              <li><a href="/about" className="hover:text-sky-400 transition-colors duration-300 block py-2">About Us</a></li>
               <li>
                 <button 
                   onClick={() => setIsProductsOpen(!isProductsOpen)} 
-                  className="w-full text-left hover:text-sky-400 transition-colors flex items-center justify-between"
+                  className="w-full text-left hover:text-sky-400 transition-colors duration-300 flex items-center justify-between py-2"
                 >
-                  Products and Services
+                  PRODUCTS AND SERVICES
                   <svg className={`w-4 h-4 transition-transform ${isProductsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -251,7 +346,7 @@ const Header = () => {
                     <li>
                       <button 
                         onClick={() => setIsAdvancedOpen(!isAdvancedOpen)} 
-                        className="w-full text-left hover:text-sky-400 transition-colors flex items-center justify-between"
+                        className="w-full text-left hover:text-sky-400 transition-colors duration-300 flex items-center justify-between py-1"
                       >
                         Advanced Analytics Solutions
                         <svg className={`w-4 h-4 transition-transform ${isAdvancedOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -260,26 +355,26 @@ const Header = () => {
                       </button>
                       {isAdvancedOpen && (
                         <ul className="mt-1 space-y-1 pl-4 text-xs">
-                          <li><a href="#" className="hover:text-sky-400 transition-colors">BI and Dashboarding</a></li>
+                          <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">BI and Dashboarding</a></li>
                         </ul>
                       )}
                     </li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Digital Transformation Services</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">HRIS / Payroll System</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">ERP System</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Accounting System</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">IoT System</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Managed IT Services</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Paxyroll Cloud Timekeeping</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Digital Transformation Services</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">HRIS / Payroll System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">ERP System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Accounting System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">IoT System</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Managed IT Services</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Paxyroll Cloud Timekeeping</a></li>
                   </ul>
                 )}
               </li>
               <li>
                 <button 
                   onClick={() => setIsBlogsOpen(!isBlogsOpen)} 
-                  className="w-full text-left hover:text-sky-400 transition-colors flex items-center justify-between"
+                  className="w-full text-left hover:text-sky-400 transition-colors duration-300 flex items-center justify-between py-2"
                 >
-                  Blogs
+                  BLOGS
                   <svg className={`w-4 h-4 transition-transform ${isBlogsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -287,24 +382,23 @@ const Header = () => {
                 {isBlogsOpen && (
                   <ul className="mt-2 space-y-2 pl-4 text-sm normal-case border-l border-sky-400/50">
                     <li className="text-[#00bbff] font-semibold mb-1">News and Insights</li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Recent Blogs</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Recent Blogs</a></li>
                     <li className="text-[#00bbff] font-semibold mt-3 mb-1">News & Events</li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Advanced Analytics</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Digital Transformation</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Human Resource Information</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Enterprise Resource Planning</a></li>
-                    <li><a href="#" className="hover:text-sky-400 transition-colors">Accounting</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Advanced Analytics</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Digital Transformation</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Human Resource Information</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Enterprise Resource Planning</a></li>
+                    <li><a href="#" className="hover:text-sky-400 transition-colors duration-300 block py-1">Accounting</a></li>
                   </ul>
                 )}
               </li>
-              <li><a href="/careers" className="hover:text-sky-400 transition-colors">Careers</a></li>
-              <li><a href="/contact" className="hover:text-sky-400 transition-colors">Contact Us</a></li>
+              <li><a href="/careers" className="hover:text-sky-400 transition-colors duration-300 block py-2">Careers</a></li>
+              <li><a href="/contact" className="hover:text-sky-400 transition-colors duration-300 block py-2">Contact Us</a></li>
             </ul>
             <div className="translator mt-4 min-w-[120px] flex items-center justify-start">
-              {/* Google Translate for mobile */}
               <div id="google_translate_element_mobile"></div>
             </div>
-          </div>
+          </Motion.div>
         )}
       </div>
     </header>
