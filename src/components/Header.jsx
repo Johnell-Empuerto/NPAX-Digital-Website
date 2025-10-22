@@ -129,22 +129,29 @@ const Header = () => {
         }
       };
 
+      // Apply once initially
       addContainerStyles();
       addMenuStyles();
       fixTranslateLabel();
-      const interval = setInterval(() => {
+
+      // Optional: Run a limited number of times if needed for async loading
+      let count = 0;
+      const limitedInterval = setInterval(() => {
         addContainerStyles();
         addMenuStyles();
         fixTranslateLabel();
+        count++;
+        if (count >= 5) clearInterval(limitedInterval); // Stop after 5 runs (2.5 seconds)
       }, 500);
 
-      return () => clearInterval(interval);
+      return () => clearInterval(limitedInterval);
     };
 
-    styleGoogleTranslate();
+    const cleanup = styleGoogleTranslate();
 
     return () => {
       delete window.googleTranslateElementInit;
+      cleanup();
     };
   }, []);
 
