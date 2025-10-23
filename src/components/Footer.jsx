@@ -35,15 +35,15 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="footer overflow-hidden py-10 bg-[#000]">
+    <div className="footer overflow-hidden py-10 bg-[var(--color-bg-dark)]">
       <div className="wrapper max-w-7xl mx-auto px-4">
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-white/10">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)]">
           
           {/* Folder Tab Design - Adapted for Footer */}
           <div className="folder_head flex flex-row flex-nowrap">
             <div className="folder_label_left h-[68px] text-center">
-              <div className="folder_label_left_inner w-full h-full flex items-center bg-[#000000] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-white">
-                <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[#F9AF4B] rounded-full mr-[1.25rem]"></span>
+              <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-text-light)]">
+                <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
                 Connect with Us
               </div>
             </div>
@@ -68,7 +68,7 @@ const Footer = () => {
             {/* Column 1: About */}
             <Motion.div className="first-col" variants={childVariants}>
               <img src={logo} alt="NPAX LOGO" className="mb-4 w-32" />
-              <p className="text-white/80 text-sm mb-6">
+              <p className="text-[var(--color-text-light)] text-sm mb-6">
                 Empowering your growth with innovative, reliable, and scalable strategies tailored to your success.
               </p>
               <div className="footer-icon flex gap-4">
@@ -89,43 +89,43 @@ const Footer = () => {
 
             {/* Column 2: Company */}
             <Motion.div className="second-col" variants={childVariants}>
-              <h3 className="text-[#00bbff] text-xl font-semibold mb-4 font-(family-name:--secondary-font)">Company</h3>
+              <h3 className="text-[var(--color-primary)] text-xl font-semibold mb-4 font-(family-name:--secondary-font)">Company</h3>
               <ul className="space-y-2">
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">About Us</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Career</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Blogs and Insights</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Services</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">About Us</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Career</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Blogs and Insights</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Services</a></li>
               </ul>
             </Motion.div>
 
             {/* Column 3: Services */}
             <Motion.div className="third-col" variants={childVariants}>
-              <h3 className="text-[#00bbff] text-xl font-semibold mb-4 font-(family-name:--secondary-font)">Services</h3>
+              <h3 className="text-[var(--color-primary)] text-xl font-semibold mb-4 font-(family-name:--secondary-font)">Services</h3>
               <ul className="space-y-2">
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Business Intelligence</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Business Analytics</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Data Dashboarding</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Software Development</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">IT Maintenance and Management</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">IOT</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Business Intelligence</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Business Analytics</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Data Dashboarding</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Software Development</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">IT Maintenance and Management</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">IOT</a></li>
               </ul>
             </Motion.div>
 
             {/* Column 4: Solutions */}
             <Motion.div className="fourth-col" variants={childVariants}>
-              <h3 className="text-[#00bbff] text-xl font-semibold mb-4 font-(family-name:--secondary-font)">Solutions</h3>
+              <h3 className="text-[var(--color-primary)] text-xl font-semibold mb-4 font-(family-name:--secondary-font)">Solutions</h3>
               <ul className="space-y-2">
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Computerized Accounting System with Compact ERP Solution</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">HRIS and Payroll Calculation System</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Manufacturing ERP System</a></li>
-                <li><a href="" className="text-white/80 hover:text-[#00bbff] transition-colors text-sm">Free Timekeeping Tool</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Computerized Accounting System with Compact ERP Solution</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">HRIS and Payroll Calculation System</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Manufacturing ERP System</a></li>
+                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Free Timekeeping Tool</a></li>
               </ul>
             </Motion.div>
           </Motion.div>
 
           {/* Copyright */}
-          <div className="copyright border-t border-white/10 pt-6 text-center text-white/60 text-[13px] px-8 pb-8">
-            &copy; {currentYear} NPAX. All rights reserved. | <a href="#" className="hover:text-[#00bbff] transition-colors">Legal Notices</a> | <a href="#" className="hover:text-[#00bbff] transition-colors">Cookie Policy</a>
+          <div className="copyright border-t border-[rgba(var(--color-text-light),0.1)] pt-6 text-center text-[rgba(var(--color-text-light),0.6)] text-[13px] px-8 pb-8">
+            &copy; {currentYear} NPAX. All rights reserved. | <a href="#" className="hover:text-[var(--color-primary)] transition-colors">Legal Notices</a> | <a href="#" className="hover:text-[var(--color-primary)] transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>

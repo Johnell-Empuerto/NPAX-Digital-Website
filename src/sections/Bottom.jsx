@@ -34,15 +34,15 @@ const boxVariants = {
 
 const Bottom = () => {
   return (
-    <div className='bottom overflow-hidden py-10 bg-[#000]'>
+    <div className='bottom overflow-hidden py-10 bg-[var(--color-bg-dark)]'>
       <div className="wrapper max-w-7xl mx-auto px-4">
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-white/10">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)]">
           
           {/* Featured Badge in Top Left - Adapted for "Who We Serve" */}
           <div className="folder_head flex flex-row flex-nowrap">
             <div className="folder_label_left h-[68px] text-center">
-              <div className="folder_label_left_inner w-full h-full flex items-center bg-[#000000] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-white">
-                <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[#F9AF4B] rounded-full mr-[1.25rem]"></span>
+              <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-text-light)]">
+                <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
                 Our Reach
               </div>
             </div>
@@ -57,10 +57,10 @@ const Bottom = () => {
           </div>
 
           {/* Section Title - Aligned with Middle section styling */}
-          <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-center text-[#00bbff]">
+          <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-center text-[var(--color-primary)]">
             Who We Serve
           </h2>
-          <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-white">
+          <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-[var(--color-text-light)]">
             Smart solutions built for every business growth.
           </p>
 
@@ -77,8 +77,8 @@ const Bottom = () => {
               variants={boxVariants}
             >
               <img src={manufacturing} alt="Manufacturing Icon" className="img-icon w-16 h-16 mx-auto mb-4" />
-              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-2">Manufacturing or Production</h3>
-              <p className="text-[16px] font-(family-name:--secondary-font) text-gray-700">Streamline processes, boost efficiency, and drive sustainable growth.</p>
+              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">Manufacturing or Production</h3>
+              <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)]">Streamline processes, boost efficiency, and drive sustainable growth.</p>
             </Motion.div>
             
             <Motion.div 
@@ -86,8 +86,8 @@ const Bottom = () => {
               variants={boxVariants}
             >
               <img src={world} alt="World Icon" className="img-icon w-16 h-16 mx-auto mb-4" />
-              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-2">Local or International</h3>
-              <p className="text-[16px] font-(family-name:--secondary-font) text-gray-700">Scale with confidence, wherever your business operates.</p>
+              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">Local or International</h3>
+              <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)]">Scale with confidence, wherever your business operates.</p>
             </Motion.div>
 
             <Motion.div 
@@ -95,8 +95,8 @@ const Bottom = () => {
               variants={boxVariants}
             >
               <img src={enterprise} alt="Enterprise Icon" className="img-icon w-16 h-16 mx-auto mb-4" />
-              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-2">SMB, SME or Large Enterprise</h3>
-              <p className="text-[16px] font-(family-name:--secondary-font) text-gray-700">Custom strategies designed for businesses of every size.</p>
+              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">SMB, SME or Large Enterprise</h3>
+              <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)]">Custom strategies designed for businesses of every size.</p>
             </Motion.div>
 
             <Motion.div 
@@ -104,8 +104,8 @@ const Bottom = () => {
               variants={boxVariants}
             >
               <img src={management} alt="Management Icon" className="img-icon w-16 h-16 mx-auto mb-4" />
-              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-2">Product or Services Providers</h3>
-              <p className="text-[16px] font-(family-name:--secondary-font) text-gray-700">Streamline processes, boost efficiency, and drive sustainable growth.</p>
+              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">Product or Services Providers</h3>
+              <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)]">Streamline processes, boost efficiency, and drive sustainable growth.</p>
             </Motion.div>
 
             <Motion.div 
@@ -113,8 +113,8 @@ const Bottom = () => {
               variants={boxVariants}
             >
               <img src={government} alt="Government Icon" className="img-icon w-16 h-16 mx-auto mb-4" />
-              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-2">Government or Public Sector</h3>
-              <p className="text-[16px] font-(family-name:--secondary-font) text-gray-700">Empower your offerings with smarter, technology-driven solutions.</p>
+              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">Government or Public Sector</h3>
+              <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)]">Empower your offerings with smarter, technology-driven solutions.</p>
             </Motion.div>
 
             <Motion.div 
@@ -122,8 +122,8 @@ const Bottom = () => {
               variants={boxVariants}
             >
               <img src={logistics} alt="Logistics Icon" className="img-icon w-16 h-16 mx-auto mb-4" />
-              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-2">Logistics or Distribution</h3>
-              <p className="text-[16px] font-(family-name:--secondary-font) text-gray-700">Optimize supply chains and accelerate delivery performance.</p>
+              <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">Logistics or Distribution</h3>
+              <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)]">Optimize supply chains and accelerate delivery performance.</p>
             </Motion.div>
           </Motion.div>
         </div>

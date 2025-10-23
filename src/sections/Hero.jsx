@@ -36,7 +36,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero relative h-[100dvh] overflow-hidden bg-black">
+    <div className="hero relative h-[100dvh] overflow-hidden bg-[var(--color-bg-dark)]">
       {/* 🎥 Background video */}
       <video
         ref={videoRef}
@@ -51,19 +51,19 @@ const Hero = () => {
       />
 
       {/* 🖤 Overlay for contrast */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-[var(--color-bg-dark)]/40"></div>
 
       {/* 🧩 Hero Content */}
       <div className="relative z-10 h-full flex justify-center items-center text-center px-4">
         <Motion.div
-          className="text-white flex flex-col items-center justify-center gap-6"
+          className="text-[var(--color-text-light)] flex flex-col items-center justify-center gap-6"
           variants={containerVariants}
           initial="hidden"
           animate={videoLoaded ? "visible" : "hidden"}
         >
           {/* 🌟 Title */}
           <Motion.h2
-            className="text-sky-400 font-bold font-(family-name:--secondary-font) text-[50px] md:text-[48px] sm:text-[38px] max-w-[730px] w-full max-[700px]:text-[38px] max-[400px]:text-[35px]"
+            className="text-[var(--color-primary)] font-bold font-(family-name:--secondary-font) text-[50px] md:text-[48px] sm:text-[38px] max-w-[730px] w-full max-[700px]:text-[38px] max-[400px]:text-[35px]"
             variants={childVariants}
           >
             Future-Proof Your Business with Our Amazing Solutions™
@@ -71,7 +71,7 @@ const Hero = () => {
 
           {/* 💬 Subtitle */}
           <Motion.p
-            className="text-[18px] sm:text-[16px] max-w-[600px] w-full font-extralight font-(family-name:--secondary-font) text-gray-200"
+            className="text-[18px] sm:text-[16px] max-w-[600px] w-full font-extralight font-(family-name:--secondary-font) text-[rgba(var(--color-text-light),0.8)]"
             variants={childVariants}
           >
             From strategy to execution, we deliver tailored IT solutions that drive growth,
@@ -84,10 +84,10 @@ const Hero = () => {
             className="flex flex-wrap justify-center gap-4 font-(family-name:--secondary-font)"
             variants={childVariants}
           >
-            <div className="btn rounded-full px-6 py-2 border border-sky-400 hover:bg-transparent hover:border-3 hover:border-sky-400 transition-all duration-200 ease-in-out cursor-pointer">
+            <div className="btn rounded-full px-6 py-2 border border-[var(--color-primary)] hover:bg-transparent hover:border-3 hover:border-[var(--color-primary)] transition-all duration-200 ease-in-out cursor-pointer">
               Learn More
             </div>
-            <div className="btn bg-transparent border-sky-400 border-3 rounded-full px-6 py-2 hover:bg-[#2B3692] hover:text-white hover:border-[#2B3692] transition-all duration-300 ease-in-out cursor-pointer">
+            <div className="btn bg-transparent border-[var(--color-primary)] border-3 rounded-full px-6 py-2 hover:bg-[var(--color-secondary)] hover:text-[var(--color-text-light)] hover:border-[var(--color-secondary)] transition-all duration-300 ease-in-out cursor-pointer">
               Get Started
             </div>
           </Motion.div>

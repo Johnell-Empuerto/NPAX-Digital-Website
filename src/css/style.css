@@ -9,12 +9,25 @@
   --primary-font-size: 18px;
   --secondary-font-size: 20px;
   --tertiary-font-size: 18px;
-  --primary-color: #38bdf8;
+  --primary-color: #00bbff;
+}
+
+:root {
+  --color-bg-dark: #000000;
+  --color-bg-glass: rgba(255, 255, 255, 0.1);
+  --color-primary: #00bbff;
+  --color-secondary: #2B3692;
+  --color-accent: #F9AF4B;
+  --color-text-light: #ffffff;
+  --color-text-muted: #6b7280;
+  --color-text-dark: #111827;
+  --color-border-light: #e5e7eb;
+  --color-sky: #60a5fa;
 }
 
 html {
   font-family: var(--secondary-font);
-  background: #000;
+  background: var(--color-bg-dark);
 }
 
 /* Add custom reusable components */
@@ -24,7 +37,7 @@ html {
   }
   
   .btn {
-    @apply bg-[#2B3692] text-white rounded-md text-[18px] px-10 py-2.5;
+    @apply bg-[var(--color-secondary)] text-[var(--color-text-light)] rounded-md text-[18px] px-10 py-2.5;
   }
 
   a.VIpgJd-ZVi9od-l4eHX-hSRGPd {
@@ -49,10 +62,4 @@ html {
       font-size: 12px !important;
     }
   }
-
-
-  
-
-
-
 }

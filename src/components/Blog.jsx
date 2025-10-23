@@ -31,15 +31,15 @@ const boxVariants = {
 
 const Blog = () => {
   return (
-    <div className='blog overflow-hidden py-10 bg-[#000]'>
+    <div className='blog overflow-hidden py-10 bg-[var(--color-bg-dark)]'>
       <div className="wrapper max-w-7xl mx-auto px-4">
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-white/10">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)]">
           
           {/* Folder Tab Design - Adapted for Blog */}
           <div className="folder_head flex flex-row flex-nowrap">
             <div className="folder_label_left h-[68px] text-center">
-              <div className="folder_label_left_inner w-full h-full flex items-center bg-[#000000] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-white">
-                <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[#F9AF4B] rounded-full mr-[1.25rem]"></span>
+              <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-text-light)]">
+                <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
                 Blogs
               </div>
             </div>
@@ -54,10 +54,10 @@ const Blog = () => {
           </div>
 
           {/* Section Title - Consistent styling */}
-          <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-center text-[#00bbff]">
+          <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-center text-[var(--color-primary)]">
             Insights & Updates
           </h2>
-          <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-white">
+          <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-[var(--color-text-light)]">
             Stay informed with the latest trends, news, and expert articles.
           </p>
 
@@ -75,11 +75,11 @@ const Blog = () => {
             >
               <img src={MusicalDay} alt="NPAX Musical Day" className="w-full h-48 object-cover" />
               <div className="p-6 flex flex-col flex-grow">
-                <p className="date text-[14px] text-gray-500 mb-2">October 04, 2022</p>
-                <p className="title text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-4">NPAX Musical Day</p>
+                <p className="date text-[14px] text-[var(--color-text-muted)] mb-2">October 04, 2022</p>
+                <p className="title text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-4">NPAX Musical Day</p>
                 <div className="w-full mt-auto flex justify-center">
                   <a
-                    className="btn rounded-full hover:bg-transparent hover:border hover:border-sky-400 hover:text-sky-400 transition-all duration-200 ease-in-out cursor-pointer"
+                    className="btn rounded-full hover:bg-transparent hover:border hover:border-[var(--color-sky)] hover:text-[var(--color-sky)] transition-all duration-200 ease-in-out cursor-pointer"
                     href=""
                   >
                     Read More
@@ -93,11 +93,11 @@ const Blog = () => {
             >
               <img src={bengpartnership} alt="B-EN-G Partnership" className="w-full h-48 object-cover" />
               <div className="p-6 flex flex-col flex-grow">
-                <p className="date text-[14px] text-gray-500 mb-2">September 29, 2020</p>
-                <p className="title text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-4">B-EN-G Partnership</p>
+                <p className="date text-[14px] text-[var(--color-text-muted)] mb-2">September 29, 2020</p>
+                <p className="title text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-4">B-EN-G Partnership</p>
                 <div className="w-full mt-auto flex justify-center">
                   <a
-                    className="btn rounded-full hover:bg-transparent hover:border hover:border-sky-400 hover:text-sky-400 transition-all duration-200 ease-in-out cursor-pointer"
+                    className="btn rounded-full hover:bg-transparent hover:border hover:border-[var(--color-sky)] hover:text-[var(--color-sky)] transition-all duration-200 ease-in-out cursor-pointer"
                     href=""
                   >
                     Read More
@@ -111,11 +111,11 @@ const Blog = () => {
             >
               <img src={PhilippineHRCongress2019} alt="Philippine HR Congress 2019" className="w-full h-48 object-cover" />
               <div className="p-6 flex flex-col flex-grow">
-                <p className="date text-[14px] text-gray-500 mb-2">September 29, 2020</p>
-                <p className="title text-[20px] font-(family-name:--secondary-font) font-bold text-[#2B3692] mb-4">Philippine HR Congress 2019</p>
+                <p className="date text-[14px] text-[var(--color-text-muted)] mb-2">September 29, 2020</p>
+                <p className="title text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-4">Philippine HR Congress 2019</p>
                 <div className="w-full mt-auto flex justify-center">
                   <a
-                    className="btn rounded-full hover:bg-transparent hover:border hover:border-sky-400 hover:text-sky-400 transition-all duration-200 ease-in-out cursor-pointer"
+                    className="btn rounded-full hover:bg-transparent hover:border hover:border-[var(--color-sky)] hover:text-[var(--color-sky)] transition-all duration-200 ease-in-out cursor-pointer"
                     href=""
                   >
                     Read More
