@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion as Motion } from 'framer-motion';
 import logo from '../assets/images/logo.png';
 import corner_upper_left_black from '../assets/images/corner_upper_left_black.webp';
+import { Link } from 'react-router-dom';
 
 // Animation variants for mobile menu
 const menuVariants = {
@@ -173,7 +174,7 @@ const Header = () => {
       <div className="wrapper max-w-7xl mx-auto px-4">
         <div className="header-con flex items-center h-[80px]">
           <div className="logo">
-            <img className="w-[175px] max-[1100px]:w-[140px]" src={logo} alt="NPAX Logo" />
+            <a href='/'><img className="w-[175px] max-[1100px]:w-[140px]" src={logo} alt="NPAX Logo" /></a>
           </div>
           <div className="ml-auto flex items-center gap-4">
             <nav className="nav hidden min-[800px]:flex font-(family-name:--primary-font) text-[var(--color-nav-white)]">
