@@ -8,7 +8,7 @@ import Testimonial from './sections/Testimonial'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import BackToTop from './components/BackToTop'
+import {ThemeToggle, BackToTop} from './components/BackToTop'
 
 const App = () => {
   return (
@@ -22,6 +22,7 @@ const App = () => {
       <Contact />
       <Footer />
       <BackToTop />
+      <ThemeToggle />
     </div>
   )
 }

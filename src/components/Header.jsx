@@ -176,8 +176,8 @@ const Header = () => {
             <img className="w-[175px] max-[1100px]:w-[140px]" src={logo} alt="NPAX Logo" />
           </div>
           <div className="ml-auto flex items-center gap-4">
-            <nav className="nav hidden min-[800px]:flex font-(family-name:--primary-font) text-[var(--color-text-light)]">
-              <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-[var(--color-text-light)] max-[1200px]:gap-[20px] max-[1100px]:gap-[15px] max-[1100px]:text-[16px] max-[1000px]:text-[14px] max-[1000px]:gap-[5px] max-[900px]:text-[13px]">
+            <nav className="nav hidden min-[800px]:flex font-(family-name:--primary-font) text-[var(--color-nav-white)]">
+              <ul className="flex items-center gap-[35px] font-semibold text-[17px] uppercase text-[var(--color-nav-white)] max-[1200px]:gap-[20px] max-[1100px]:gap-[15px] max-[1100px]:text-[16px] max-[1000px]:text-[14px] max-[1000px]:gap-[5px] max-[900px]:text-[13px]">
                 <li><a href="/about" className="hover:text-[var(--color-sky)] transition-colors duration-300">About Us</a></li>
                 <li 
                   className="relative"
@@ -194,7 +194,7 @@ const Header = () => {
                     </a>
                     <button 
                       onClick={() => setIsProductsOpen(!isProductsOpen)} 
-                      className="ml-1 text-[var(--color-text-light)] hover:text-[var(--color-sky)] transition-colors duration-300"
+                      className="ml-1 text-[var(--color-nav-white)] hover:text-[var(--color-sky)] transition-colors duration-300"
                       aria-expanded={isProductsOpen}
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -221,7 +221,7 @@ const Header = () => {
                           </a>
                           <button 
                             onClick={() => setIsAdvancedOpen(!isAdvancedOpen)} 
-                            className="text-[var(--color-text-light)] hover:text-[var(--color-sky)] transition-colors duration-300"
+                            className="text-[var(--color-nav-white)] hover:text-[var(--color-sky)] transition-colors duration-300"
                             aria-expanded={isAdvancedOpen}
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -262,7 +262,7 @@ const Header = () => {
                     </a>
                     <button 
                       onClick={() => setIsBlogsOpen(!isBlogsOpen)} 
-                      className="ml-1 text-[var(--color-text-light)] hover:text-[var(--color-sky)] transition-colors duration-300"
+                      className="ml-1 text-[var(--color-nav-white)] hover:text-[var(--color-sky)] transition-colors duration-300"
                       aria-expanded={isBlogsOpen}
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -294,13 +294,13 @@ const Header = () => {
             </div>
             {/* Mobile Menu Toggle with X Animation */}
             <button 
-              className="min-[800px]:hidden text-[var(--color-text-light)] focus:outline-none relative w-8 h-8"
+              className="min-[800px]:hidden text-[var(--color-nav-white)] focus:outline-none relative w-8 h-8"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
-              <span className={`absolute right-0 w-6 h-0.5 bg-[var(--color-text-light)] rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'rotate-45 top-3.5' : 'top-2'}`}></span>
-              <span className={`absolute right-0 w-6 h-0.5 bg-[var(--color-text-light)] rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-0' : 'top-3.5'}`}></span>
-              <span className={`absolute right-0 w-6 h-0.5 bg-[var(--color-text-light)] rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? '-rotate-45 top-3.5' : 'top-5'}`}></span>
+              <span className={`absolute right-0 w-6 h-0.5 bg-[var(--color-nav-white)] rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'rotate-45 top-3.5' : 'top-2'}`}></span>
+              <span className={`absolute right-0 w-6 h-0.5 bg-[var(--color-nav-white)] rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-0' : 'top-3.5'}`}></span>
+              <span className={`absolute right-0 w-6 h-0.5 bg-[var(--color-nav-white)] rounded transition-all duration-300 ease-in-out ${isMobileMenuOpen ? '-rotate-45 top-3.5' : 'top-5'}`}></span>
             </button>
           </div>
         </div>
@@ -313,7 +313,7 @@ const Header = () => {
             initial="hidden"
             animate="visible"
           >
-            <ul className="flex flex-col gap-4 font-(family-name:--primary-font) font-semibold text-[17px] uppercase text-[var(--color-text-light)]">
+            <ul className="flex flex-col gap-4 font-(family-name:--primary-font) font-semibold text-[17px] uppercase text-[var(--color-nav-white)]">
               <li><a href="/about" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-2">About Us</a></li>
               <li>
                 <button 

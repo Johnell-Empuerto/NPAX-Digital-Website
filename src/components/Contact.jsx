@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion as Motion } from 'framer-motion';
 import contact from '../assets/images/contact-min.jpg';
 import corner_upper_left_black from '../assets/images/corner_upper_left_black.webp';
+import corner_upper_left_white from '../assets/images/corner_upper_left_white.webp';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,6 +29,23 @@ const childVariants = {
 };
 
 const Contact = () => {
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const handleThemeChange = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+
+    handleThemeChange();
+
+    const observer = new MutationObserver(handleThemeChange);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const cornerImage = isDark ? corner_upper_left_black : corner_upper_left_white;
+
   useEffect(() => {
     // Load Google reCAPTCHA script dynamically
     const script = document.createElement('script');
@@ -56,22 +74,22 @@ const Contact = () => {
   return (
     <div className='contact overflow-hidden py-10 bg-[var(--color-bg-dark)]'>
       <div className="wrapper max-w-7xl mx-auto px-4">
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)]">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)]">
           {/* Folder Tab Design */}
           <div className="folder_head flex flex-row flex-nowrap">
             <div className="folder_label_left h-[68px] text-center">
-              <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-text-light)]">
+              <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-nav-white)]">
                 <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
                 Get in Touch
               </div>
             </div>
             <div 
               className="folder_right h-[68px] rounded-tr-[20px] flex-1 bg-no-repeat bg-left-top"
-              style={{ backgroundImage: `url(${corner_upper_left_black})` }}
+              style={{ backgroundImage: `url(${cornerImage})` }}
             ></div>
             <div 
               className="folder_bottom_left h-[68px] w-[68px] bg-left-bottom absolute top-[30px] left-0 flex-1 bg-no-repeat"
-              style={{ backgroundImage: `url(${corner_upper_left_black})` }}
+              style={{ backgroundImage: `url(${cornerImage})` }}
             ></div>
           </div>
 
@@ -119,7 +137,7 @@ const Contact = () => {
                       <path d="M25 12.9169C25 17.716 21.1939 21.5832 18.2779 24.9828C16.8385 26.6609 16.1188 27.5 15 27.5C13.8812 27.5 13.1615 26.6609 11.7221 24.9828C8.80612 21.5832 5 17.716 5 12.9169C5 10.1542 6.05357 7.5046 7.92893 5.55105C9.8043 3.59749 12.3478 2.5 15 2.5C17.6522 2.5 20.1957 3.59749 22.0711 5.55105C23.9464 7.5046 25 10.1542 25 12.9169Z" stroke="var(--color-secondary)" strokeWidth="2"/>
                       <path d="M17.5 11.6148C17.5 13.0531 16.3807 14.219 15 14.219C13.6193 14.219 12.5 13.0531 12.5 11.6148C12.5 10.1765 13.6193 9.01058 15 9.01058C16.3807 9.01058 17.5 10.1765 17.5 11.6148Z" stroke="var(--color-secondary)" strokeWidth="2"/>
                     </svg>
-                    <h5 className="text-[var(--color-secondary)] text-sm sm:text-base font-normal leading-6 ml-3 sm:ml-5">Unit 1702, One Global Place 5th Avenue, cor 25th BGC Taguig City, Philippines</h5>
+                    <h5 className="text-[var(--color-secondary)] text-sm sm:text-base font-normal leading-6 ml-3 sm:ml-5">Unit 1702, One global Place 5th Avenue, cor 25th BGC Taguig City, Philippines</h5>
                   </a>
                 </div>
               </div>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion as Motion } from 'framer-motion';
 import testimonialImg from '../assets/images/Philip_Alexander_Conde.png';
 import corner_upper_left_black from '../assets/images/corner_upper_left_black.webp';
+import corner_upper_left_white from '../assets/images/corner_upper_left_white.webp';
 // Placeholder for additional images - add more as needed
 // import testimonialImg2 from '../assets/images/another_person.png';
 // import testimonialImg3 from '../assets/images/yet_another_person.png';
@@ -42,26 +43,43 @@ const testimonials = [
 ];
 
 const Testimonial = () => {
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const handleThemeChange = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+
+    handleThemeChange();
+
+    const observer = new MutationObserver(handleThemeChange);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const cornerImage = isDark ? corner_upper_left_black : corner_upper_left_white;
+
   return (
     <div className='testimonial overflow-hidden py-10 bg-[var(--color-bg-dark)]'>
       <div className="wrapper max-w-7xl mx-auto px-4">
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] shadow-lg overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)] pb-10">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)] pb-10">
           
           {/* Folder Tab Design - Adapted for Testimonials */}
           <div className="folder_head flex flex-row flex-nowrap">
             <div className="folder_label_left h-[68px] text-center">
-              <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-text-light)]">
+              <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-nav-white)]">
                 <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
                 Testimonials
               </div>
             </div>
             <div 
               className="folder_right h-[68px] rounded-tr-[20px] flex-1 bg-no-repeat bg-left-top"
-              style={{ backgroundImage: `url(${corner_upper_left_black})` }}
+              style={{ backgroundImage: `url(${cornerImage})` }}
             ></div>
             <div 
               className="folder_bottom_left h-[68px] w-[68px] bg-left-bottom absolute top-[30px] left-0 flex-1 bg-no-repeat"
-              style={{ backgroundImage: `url(${corner_upper_left_black})` }}
+              style={{ backgroundImage: `url(${cornerImage})` }}
             ></div>
           </div>
 

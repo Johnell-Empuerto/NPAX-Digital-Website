@@ -40,7 +40,7 @@ const Hero = () => {
       {/* 🎥 Background video */}
       <video
         ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover px-5 rounded-[20px] max-[1000px]:px-0 max-[1000px]:rounded-none"
+        className="absolute top-0 left-0 w-full h-full object-cover max-[1000px]:px-0 max-[1000px]:rounded-none"
         src={HeroVideo}
         autoPlay
         loop
@@ -51,7 +51,7 @@ const Hero = () => {
       />
 
       {/* 🖤 Overlay for contrast */}
-      <div className="absolute inset-0 bg-[var(--color-bg-dark)]/40"></div>
+      <div className="absolute inset-0 bg-[var(--color-bg-dark-overlay)]/40"></div>
 
       {/* 🧩 Hero Content */}
       <div className="relative z-10 h-full flex justify-center items-center text-center px-4">
@@ -71,7 +71,7 @@ const Hero = () => {
 
           {/* 💬 Subtitle */}
           <Motion.p
-            className="text-[18px] sm:text-[16px] max-w-[600px] w-full font-extralight font-(family-name:--secondary-font) text-[rgba(var(--color-text-light),0.8)]"
+            className="text-[18px] sm:text-[16px] max-w-[600px] w-full font-extralight font-(family-name:--secondary-font) text-[rgba(var(--color-text-light)]"
             variants={childVariants}
           >
             From strategy to execution, we deliver tailored IT solutions that drive growth,
