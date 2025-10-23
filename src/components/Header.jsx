@@ -169,7 +169,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="header sticky top-0 bg-[var(--color-bg-dark)] shadow-md z-20 ">
+    <header className="header sticky top-0 bg-[var(--color-bg-dark)] shadow-md z-20 max-[800px]:pb-[10px]">
       <div className="wrapper max-w-7xl mx-auto px-4">
         <div className="header-con flex items-center h-[80px]">
           <div className="logo">
@@ -307,7 +307,7 @@ const Header = () => {
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
           <Motion.div 
-            className="min-[800px]:hidden relative bg-[rgba(var(--color-bg-dark),0.9)] rounded-[20px] shadow-lg border mx-4 my-2 px-6 py-4"
+            className="min-[800px]:hidden relative bg-[rgba(var(--color-bg-dark),0.9)] rounded-[20px] shadow-lg border mx-4 my-2 px-6 py-4 max-h-[calc(100vh-80px)] overflow-y-auto overscroll-contain"
             style={{ backgroundImage: `url(${corner_upper_left_black})`, backgroundPosition: 'left top', backgroundRepeat: 'no-repeat' }}
             variants={menuVariants}
             initial="hidden"
