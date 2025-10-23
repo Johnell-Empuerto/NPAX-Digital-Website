@@ -124,7 +124,7 @@ const Footer = () => {
           </Motion.div>
 
           {/* Copyright */}
-          <div className="copyright border-t border-[rgba(var(--color-text-light),0.1)] pt-6 text-center text-[rgba(var(--color-text-light),0.6)] text-[13px] px-8 pb-8">
+          <div className="copyright border-t border-[rgba(var(--color-text-light),0.1)] pt-6 text-center text-[var(--color-text-light)] text-[13px] px-8 pb-8">
             &copy; {currentYear} NPAX. All rights reserved. | <a href="#" className="hover:text-[var(--color-primary)] transition-colors">Legal Notices</a> | <a href="#" className="hover:text-[var(--color-primary)] transition-colors">Cookie Policy</a>
           </div>
         </div>
