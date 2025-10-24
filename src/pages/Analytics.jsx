@@ -327,7 +327,7 @@ const Analytics = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h3 className="text-[30px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-6">Expertise</h3>
+              <h3 className="text-[30px] font-(family-name:--secondary-font) font-bold text-[var(--color-primary)] mb-6">Expertise</h3>
               <div className="marquee overflow-hidden whitespace-nowrap">
                 <div className="marquee-content flex animate-marquee">
                   {logos.concat(logos).map((logo, index) => (  // Duplicate for seamless loop
