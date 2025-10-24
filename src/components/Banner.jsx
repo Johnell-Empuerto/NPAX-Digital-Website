@@ -1,12 +1,36 @@
 import React from 'react';
 import about_banner from '../assets/images/about_banner.jpg';
+import analytics_banner from '../assets/images/analytics_banner.jpg'; 
+import { useLocation } from 'react-router-dom';
 
 const Banner = () => {
+
+  const location = useLocation();
+  const path = location.pathname; // e.g. '/about' or '/analytics'
+
+
+  // Default values
+  let bannerImage = about_banner;
+  let bannerTitle = "ABOUT US";
+
+  // Conditional setup
+  if (path === '/analytics') {
+    bannerImage = analytics_banner;
+    bannerTitle = "ADVANCED ANALYTICS";
+  } else if (path === '/about') {
+    bannerImage = about_banner;
+    bannerTitle = "ABOUT US";
+  } 
+  // You can add more:
+  // else if (path === '/contact') { ... }
+
+
+
   return (
     <div 
       className="banner relative overflow-hidden py-10 bg-[var(--color-bg-dark)] h-[600px]" 
       style={{ 
-        backgroundImage: `url(${about_banner})`, 
+        backgroundImage: `url(${bannerImage})`, 
         backgroundSize: 'cover', 
         backgroundPosition: 'top', 
         backgroundRepeat: 'no-repeat' 
@@ -20,7 +44,8 @@ const Banner = () => {
           <h1 
             className="text-[var(--color-primary)] font-bold font-(family-name:--secondary-font) text-[50px] md:text-[48px] sm:text-[38px] max-[700px]:text-[38px] max-[400px]:text-[35px]"
           >
-            ABOUT US
+            {bannerTitle}
+
           </h1>
         </div>
       </div>

@@ -186,13 +186,14 @@ const Header = () => {
                   onMouseLeave={() => setIsProductsOpen(false)}
                 >
                   <div className="flex items-center">
-                    <a 
-                      href="/products" 
-                      className="hover:text-[var(--color-sky)] transition-colors duration-300"
-                      aria-expanded={isProductsOpen}
-                    >
-                      PRODUCTS AND SERVICES
-                    </a>
+                    <button
+  type="button"
+  className="hover:text-[var(--color-sky)] transition-colors duration-300 cursor-pointer"
+  aria-expanded={isProductsOpen}
+  onClick={(e) => e.preventDefault()} // optional safeguard
+>
+  PRODUCTS AND SERVICES
+</button>
                     <button 
                       onClick={() => setIsProductsOpen(!isProductsOpen)} 
                       className="ml-1 text-[var(--color-nav-white)] hover:text-[var(--color-sky)] transition-colors duration-300"
@@ -214,7 +215,7 @@ const Header = () => {
                       >
                         <div className="flex items-center justify-between">
                           <a 
-                            href="#" 
+                            href="/analytics" 
                             className="hover:text-[var(--color-sky)] transition-colors duration-300"
                             aria-expanded={isAdvancedOpen}
                           >
@@ -369,7 +370,7 @@ const Header = () => {
                     <li className="text-[var(--color-primary)] font-semibold mb-1">News and Insights</li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Recent Blogs</a></li>
                     <li className="text-[var(--color-primary)] font-semibold mt-3 mb-1">News & Events</li>
-                    <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Advanced Analytics</a></li>
+                    <li><a href="/analytics" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Advanced Analytics</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Digital Transformation</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Human Resource Information</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Enterprise Resource Planning</a></li>
