@@ -122,7 +122,7 @@ const Analytics = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-[var(--color-primary)]">Empowering Organizations Through Data</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Empowering Organizations Through Data</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">Our mission is to help organizations transform into data-driven enterprises embracing data science & analytics as part of their culture and strategy. Our aim is to unlock the power of data and improve the analytical literacy and awareness of organizations in all levels.</p>
             </Motion.div>
 
@@ -179,7 +179,7 @@ const Analytics = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-[var(--color-primary)]">Data Science Services</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Data Science Services</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">N-PAX Advanced Analytics Division offers wide array of analytics services and products that give value and real impact to your business. Our services include data management, BI & dashboarding, advanced analytics & data science solutions and consulting. We also provide training services to improve your company's analytics awareness and proficiency which nourishes a data-driven culture in a company.</p>
             </Motion.div>
 
@@ -238,7 +238,7 @@ const Analytics = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-[var(--color-primary)]">Delivering Smart Solutions That Work</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Delivering Smart Solutions That Work</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">We provide end-to-end orchestration of data via on-premise, private, and managed cloud services.</p>
             </Motion.div>
 
@@ -299,7 +299,7 @@ const Analytics = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-[var(--color-primary)]">Our Team Works with Passion</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Our Team Works with Passion</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">Backed up by skills and experience in managing Data Analytics projects.</p>
             </Motion.div>
 

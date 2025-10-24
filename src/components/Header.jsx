@@ -235,7 +235,7 @@ const Header = () => {
                           className={`absolute left-full top-0 mt-0 bg-[var(--color-bg-dark)] rounded-lg shadow-lg border border-[rgba(var(--color-sky),0.3)] w-64 z-30 py-2 px-4 transition-all duration-300 ease-in-out ${isAdvancedOpen ? 'block opacity-100 translate-x-0' : 'hidden opacity-0 -translate-x-2'}`}
                         >
                           <ul className="space-y-2 text-sm">
-                            <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">BI and Dashboarding</a></li>
+                            <li><a href="/motionboard" className="hover:text-[var(--color-sky)] transition-colors duration-300">BI and Dashboarding</a></li>
                           </ul>
                         </div>
                       </li>
@@ -341,7 +341,7 @@ const Header = () => {
                       </button>
                       {isAdvancedOpen && (
                         <ul className="mt-1 space-y-1 pl-4 text-xs">
-                          <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">BI and Dashboarding</a></li>
+                          <li><a href="/motionboard" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">BI and Dashboarding</a></li>
                         </ul>
                       )}
                     </li>

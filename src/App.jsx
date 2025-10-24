@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import { ThemeToggle, BackToTop } from './components/BackToTop';
 import About from './pages/About';
 import Analytics from './pages/Analytics';
+import MotionBoard from './pages/MotionBoard';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           />
           <Route path="/about" element={<About />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/motionboard" element={<MotionBoard />} />
           {/* You can add more pages here, e.g. */}
           {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>

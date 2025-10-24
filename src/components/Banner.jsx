@@ -1,6 +1,7 @@
 import React from 'react';
 import about_banner from '../assets/images/about_banner.jpg';
 import analytics_banner from '../assets/images/analytics_banner.jpg'; 
+import motionboard_banner from '../assets/images/motionboard_banner.jpg'; 
 import { useLocation } from 'react-router-dom';
 
 const Banner = () => {
@@ -20,6 +21,9 @@ const Banner = () => {
   } else if (path === '/about') {
     bannerImage = about_banner;
     bannerTitle = "ABOUT US";
+  } else if (path === '/motionboard') {
+    bannerImage = motionboard_banner;
+    bannerTitle = "BI AND DASHBOARDING";
   } 
   // You can add more:
   // else if (path === '/contact') { ... }

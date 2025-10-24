@@ -114,7 +114,7 @@ const About = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 text-center">
-                <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-[var(--color-primary)]">Our Mission</h2>
+                <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Our Mission</h2>
                 <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">We build trust and deliver value through the harmony of people and technology.</p>
                 <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">We aim to be a lasting IT partner that empowers the growth of our clients and our teams.</p>
               </div>
@@ -135,7 +135,7 @@ const About = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 text-center">
-                <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-[var(--color-primary)]">Our Vision</h2>
+                <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Our Vision</h2>
                 <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">We combine diverse talents and technological strengths to deliver sustainable value to businesses around the world.</p>
                 <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">We aim to be a trusted presence that continuously creates new possibilities through collaboration and harmony.</p>
               </div>
