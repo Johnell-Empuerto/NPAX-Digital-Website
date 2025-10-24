@@ -101,7 +101,7 @@ const Analytics = () => {
             <div className="folder_label_left h-[68px] text-center">
               <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-nav-white)]">
                 <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
-                Empowering Organizations Through Data
+                Driven by Data
               </div>
             </div>
             <div 
@@ -239,7 +239,7 @@ const Analytics = () => {
               viewport={{ once: true, amount: 0.3 }}
             >
               <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-[var(--color-primary)]">Delivering Smart Solutions That Work</h2>
-              <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">WE PROVIDE END-TO-END ORCHESTRATION OF DATA VIA ON-PREMISE, PRIVATE AND MANAGED CLOUD SERVICES</p>
+              <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">We provide end-to-end orchestration of data via on-premise, private, and managed cloud services.</p>
             </Motion.div>
 
             <Motion.div 

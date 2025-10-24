@@ -85,7 +85,7 @@ const Footer = () => {
           >
             {/* Column 1: About */}
             <Motion.div className="first-col" variants={childVariants}>
-              <img src={logo} alt="NPAX LOGO" className="mb-4 w-32" />
+              <a href='/'><img src={logo} alt="NPAX LOGO" className="mb-4 w-32" /></a>
               <p className="text-[var(--color-text-light)] text-sm mb-6">
                 Empowering your growth with innovative, reliable, and scalable strategies tailored to your success.
               </p>
@@ -109,7 +109,7 @@ const Footer = () => {
             <Motion.div className="second-col" variants={childVariants}>
               <h3 className="text-[var(--color-primary)] text-xl font-semibold mb-4 font-(family-name:--secondary-font)">Company</h3>
               <ul className="space-y-2">
-                <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">About Us</a></li>
+                <li><a href="/about" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">About Us</a></li>
                 <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Career</a></li>
                 <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Blogs and Insights</a></li>
                 <li><a href="" className="text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors text-sm">Services</a></li>
