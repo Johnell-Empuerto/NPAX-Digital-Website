@@ -187,13 +187,13 @@ const Header = () => {
                 >
                   <div className="flex items-center">
                     <button
-  type="button"
-  className="hover:text-[var(--color-sky)] transition-colors duration-300 cursor-pointer"
-  aria-expanded={isProductsOpen}
-  onClick={(e) => e.preventDefault()} // optional safeguard
->
-  PRODUCTS AND SERVICES
-</button>
+                      type="button"
+                      className="hover:text-[var(--color-sky)] transition-colors duration-300 cursor-pointer"
+                      aria-expanded={isProductsOpen}
+                      onClick={() => setIsProductsOpen(!isProductsOpen)}
+                    >
+                      PRODUCTS AND SERVICES
+                    </button>
                     <button 
                       onClick={() => setIsProductsOpen(!isProductsOpen)} 
                       className="ml-1 text-[var(--color-nav-white)] hover:text-[var(--color-sky)] transition-colors duration-300"
@@ -218,6 +218,12 @@ const Header = () => {
                             href="/analytics" 
                             className="hover:text-[var(--color-sky)] transition-colors duration-300"
                             aria-expanded={isAdvancedOpen}
+                            onClick={(e) => {
+                              if (!isAdvancedOpen) {
+                                setIsAdvancedOpen(true);
+                                e.preventDefault();
+                              }
+                            }}
                           >
                             Advanced Analytics Solutions
                           </a>
@@ -259,6 +265,12 @@ const Header = () => {
                       href="/blogs" 
                       className="hover:text-[var(--color-sky)] transition-colors duration-300"
                       aria-expanded={isBlogsOpen}
+                      onClick={(e) => {
+                        if (!isBlogsOpen) {
+                          setIsBlogsOpen(true);
+                          e.preventDefault();
+                        }
+                      }}
                     >
                       Blogs
                     </a>
@@ -330,15 +342,28 @@ const Header = () => {
                 {isProductsOpen && (
                   <ul className="mt-2 space-y-2 pl-4 text-sm normal-case border-l border-[rgba(var(--color-sky),0.5)]">
                     <li>
-                      <button 
-                        onClick={() => setIsAdvancedOpen(!isAdvancedOpen)} 
-                        className="w-full text-left hover:text-[var(--color-sky)] transition-colors duration-300 flex items-center justify-between py-1"
-                      >
-                        Advanced Analytics Solutions
-                        <svg className={`w-4 h-4 transition-transform ${isAdvancedOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
+                      <div className="flex items-center justify-between">
+                        <a 
+                          href="/analytics" 
+                          className="hover:text-[var(--color-sky)] transition-colors duration-300 flex-1 py-1"
+                          onClick={(e) => {
+                            if (!isAdvancedOpen) {
+                              setIsAdvancedOpen(true);
+                              e.preventDefault();
+                            }
+                          }}
+                        >
+                          Advanced Analytics Solutions
+                        </a>
+                        <button 
+                          onClick={() => setIsAdvancedOpen(!isAdvancedOpen)} 
+                          className="text-[var(--color-nav-white)] hover:text-[var(--color-sky)] transition-colors duration-300"
+                        >
+                          <svg className={`w-4 h-4 transition-transform ${isAdvancedOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      </div>
                       {isAdvancedOpen && (
                         <ul className="mt-1 space-y-1 pl-4 text-xs">
                           <li><a href="/motionboard" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">BI and Dashboarding</a></li>
@@ -356,15 +381,28 @@ const Header = () => {
                 )}
               </li>
               <li>
-                <button 
-                  onClick={() => setIsBlogsOpen(!isBlogsOpen)} 
-                  className="w-full text-left hover:text-[var(--color-sky)] transition-colors duration-300 flex items-center justify-between py-2"
-                >
-                  BLOGS
-                  <svg className={`w-4 h-4 transition-transform ${isBlogsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
+                <div className="flex items-center justify-between">
+                  <a 
+                    href="/blogs" 
+                    className="hover:text-[var(--color-sky)] transition-colors duration-300 flex-1 py-2"
+                    onClick={(e) => {
+                      if (!isBlogsOpen) {
+                        setIsBlogsOpen(true);
+                        e.preventDefault();
+                      }
+                    }}
+                  >
+                    BLOGS
+                  </a>
+                  <button 
+                    onClick={() => setIsBlogsOpen(!isBlogsOpen)} 
+                    className="text-[var(--color-nav-white)] hover:text-[var(--color-sky)] transition-colors duration-300"
+                  >
+                    <svg className={`w-4 h-4 transition-transform ${isBlogsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </div>
                 {isBlogsOpen && (
                   <ul className="mt-2 space-y-2 pl-4 text-sm normal-case border-l border-[rgba(var(--color-sky),0.5)]">
                     <li className="text-[var(--color-primary)] font-semibold mb-1">News and Insights</li>
