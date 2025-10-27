@@ -214,8 +214,8 @@ const competencies = [
       <div className="wrapper max-w-7xl mx-auto px-4 py-10">
 
         {/* Engagement Model Section */}
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)]">
-          <div className="folder_head flex flex-row flex-nowrap">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] bg-no-repeat bg-[var(--color-bg-glass)]">
+          <div className="folder_head flex flex-row flex-nowrap overflow-hidden rounded-tr-[20px] rounded-tl-[0]"> {/* Moved overflow-hidden here if needed for head */}
             <div className="folder_label_left h-[68px] text-center">
               <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-nav-white)]">
                 <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
@@ -237,11 +237,11 @@ const competencies = [
             variants={rowVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
-            <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">DIGITAL TRANSFORMATION (DX)</h2>
-            <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-[var(--color-text-light)] max-[768px]:pb-5">Think Different, Accelerate Business Value through Innovation</p>
-            <p className="font-(family-name:--secondary-font) text-[16px] text-center text-[var(--color-text-light)] mb-10">
+            <h2 className="font-[var(--secondary-font)] text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">DIGITAL TRANSFORMATION (DX)</h2>
+            <p className="font-[var(--secondary-font)] text-[16px] text-center pb-10 text-[var(--color-text-light)] max-[768px]:pb-5">Think Different, Accelerate Business Value through Innovation</p>
+            <p className="font-[var(--secondary-font)] text-[16px] text-center text-[var(--color-text-light)] mb-10">
               It is the integration of Digital Technology to encourage innovation and efficiency in the different aspect of an organization’s business processes. At N-PAX we don't just build software we help organization create more value for its customers by understanding the customer needs build system that respond to its market needs.
             </p>
 
@@ -250,15 +250,15 @@ const competencies = [
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.1 }}
             >
               <Motion.div 
                 className="text-center p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
                 variants={boxVariants}
               >
-                <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">PHASE 1</h3>
-                <h4 className="text-[18px] font-(family-name:--secondary-font) font-semibold text-[var(--color-primary)] mb-4">Strategy Consulting</h4>
-                <ul className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)] list-disc list-inside text-left">
+                <h3 className="text-[20px] font-[var(--secondary-font)] font-bold text-[var(--color-secondary)] mb-2">PHASE 1</h3>
+                <h4 className="text-[18px] font-[var(--secondary-font)] font-semibold text-[var(--color-primary)] mb-4">Strategy Consulting</h4>
+                <ul className="text-[16px] font-[var(--secondary-font)] text-[var(--color-text-muted)] list-disc list-inside text-left">
                   <li>Defining and Establishing Business Goals</li>
                   <li>Site Visits and Strategy Planning</li>
                   <li>Gap Analysis</li>
@@ -271,9 +271,9 @@ const competencies = [
                 className="text-center p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
                 variants={boxVariants}
               >
-                <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">PHASE 2</h3>
-                <h4 className="text-[18px] font-(family-name:--secondary-font) font-semibold text-[var(--color-primary)] mb-4">Research and Development</h4>
-                <ul className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)] list-disc list-inside text-left">
+                <h3 className="text-[20px] font-[var(--secondary-font)] font-bold text-[var(--color-secondary)] mb-2">PHASE 2</h3>
+                <h4 className="text-[18px] font-[var(--secondary-font)] font-semibold text-[var(--color-primary)] mb-4">Research and Development</h4>
+                <ul className="text-[16px] font-[var(--secondary-font)] text-[var(--color-text-muted)] list-disc list-inside text-left">
                   <li>Proof-of-concept Development</li>
                   <li>Technology Viability</li>
                   <li>Software Architectural Design</li>
@@ -287,9 +287,9 @@ const competencies = [
                 className="text-center p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
                 variants={boxVariants}
               >
-                <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">PHASE 3</h3>
-                <h4 className="text-[18px] font-(family-name:--secondary-font) font-semibold text-[var(--color-primary)] mb-4">System Development</h4>
-                <ul className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)] list-disc list-inside text-left">
+                <h3 className="text-[20px] font-[var(--secondary-font)] font-bold text-[var(--color-secondary)] mb-2">PHASE 3</h3>
+                <h4 className="text-[18px] font-[var(--secondary-font)] font-semibold text-[var(--color-primary)] mb-4">System Development</h4>
+                <ul className="text-[16px] font-[var(--secondary-font)] text-[var(--color-text-muted)] list-disc list-inside text-left">
                   <li>Technology and Strategy Implementation</li>
                   <li>Software Development</li>
                   <li>System and Device Integration</li>
@@ -301,8 +301,8 @@ const competencies = [
         </div>
 
         {/* Portfolio of Services and Solutions Section */}
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)] mt-10">
-          <div className="folder_head flex flex-row flex-nowrap">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] bg-no-repeat bg-[var(--color-bg-glass)] mt-10">
+          <div className="folder_head flex flex-row flex-nowrap overflow-hidden rounded-tr-[20px] rounded-tl-[0]"> {/* Moved overflow-hidden here */}
             <div className="folder_label_left h-[68px] text-center">
               <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-nav-white)]">
                 <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
@@ -319,15 +319,15 @@ const competencies = [
             ></div>
           </div>
 
-          <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">Portfolio of Services and Solutions</h2>
-          <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-[var(--color-text-light)] max-[768px]:pb-5">Empowering Your Digital Journey</p>
+          <h2 className="font-[var(--secondary-font)] text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">Portfolio of Services and Solutions</h2>
+          <p className="font-[var(--secondary-font)] text-[16px] text-center pb-10 text-[var(--color-text-light)] max-[768px]:pb-5">Empowering Your Digital Journey</p>
 
           <Motion.div 
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-8 pb-10"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             {[
               { icon: dx_consulting, title: 'Digital Transformation Consulting', description: 'We help marketers set a transformation agenda, clear strategy and pragmatic roadmap.' },
@@ -346,17 +346,17 @@ const competencies = [
                 variants={boxVariants}
               >
                 <img src={service.icon} alt={service.title} className="img-icon w-16 h-16 mx-auto mb-4" />
-                <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">{service.title}</h3>
-                <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)]">{service.description}</p>
+                <h3 className="text-[20px] font-[var(--secondary-font)] font-bold text-[var(--color-secondary)] mb-2">{service.title}</h3>
+                <p className="text-[16px] font-[var(--secondary-font)] text-[var(--color-text-muted)]">{service.description}</p>
               </Motion.div>
             ))}
           </Motion.div>
         </div>
 
         {/* DX TEAM PROJECT EXPERIENCE AND COMPETENCY Section */}
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)] mt-10">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] bg-no-repeat bg-[var(--color-bg-glass)] mt-10">
           {/* Folder header */}
-          <div className="folder_head flex flex-row flex-nowrap">
+          <div className="folder_head flex flex-row flex-nowrap overflow-hidden rounded-tr-[20px] rounded-tl-[0]"> {/* Moved overflow-hidden here */}
             <div className="folder_label_left h-[68px] text-center">
               <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-nav-white)]">
                 <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
@@ -374,10 +374,10 @@ const competencies = [
           </div>
 
           {/* Section title */}
-          <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">
+          <h2 className="font-[var(--secondary-font)] text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">
             DX TEAM PROJECT EXPERIENCE AND COMPETENCY
           </h2>
-          <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-[var(--color-text-light)] max-[768px]:pb-5">
+          <p className="font-[var(--secondary-font)] text-[16px] text-center pb-10 text-[var(--color-text-light)] max-[768px]:pb-5">
             Digital Technologies and Applications and Development
           </p>
 
@@ -387,7 +387,7 @@ const competencies = [
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             {[
               {
@@ -438,10 +438,10 @@ const competencies = [
                         : 'bg-opacity-0 opacity-0 sm:group-hover:bg-opacity-70 sm:group-hover:opacity-100'
                     }`}
                 >
-                  <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-text-light)] mb-2">
+                  <h3 className="text-[20px] font-[var(--secondary-font)] font-bold text-[var(--color-text-light)] mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-light)] text-center">
+                  <p className="text-[16px] font-[var(--secondary-font)] text-[var(--color-text-light)] text-center">
                     {project.description}
                   </p>
                 </div>
@@ -451,8 +451,8 @@ const competencies = [
         </div>
 
         {/* DX TEAM TECHNOLOGY COMPETENCY Section */}
-        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] overflow-hidden bg-no-repeat bg-[var(--color-bg-glass)] mt-10">
-          <div className="folder_head flex flex-row flex-nowrap">
+        <div className="curvebgdesign relative w-full backdrop-blur-10xl backdrop-brightness-10 rounded-[20px] rounded-tl-[0] bg-no-repeat bg-[var(--color-bg-glass)] mt-10">
+          <div className="folder_head flex flex-row flex-nowrap overflow-hidden rounded-tr-[20px] rounded-tl-[0]"> {/* Moved overflow-hidden here */}
             <div className="folder_label_left h-[68px] text-center">
               <div className="folder_label_left_inner w-full h-full flex items-center bg-[var(--color-bg-dark)] rounded-br-[20px] text-[1.25rem] font-semibold pr-[30px] pl-[30px] text-[var(--color-nav-white)]">
                 <span className="yellow_dot inline-block w-[10px] h-[10px] bg-[var(--color-accent)] rounded-full mr-[1.25rem]"></span>
@@ -474,11 +474,11 @@ const competencies = [
             variants={rowVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
-            <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">DX TEAM TECHNOLOGY COMPETENCY</h2>
-            <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-[var(--color-text-light)] max-[768px]:pb-5">Empowering Innovation Through Multidisciplinary Expertise</p>
-            <p className="font-(family-name:--secondary-font) text-[16px] text-center text-[var(--color-text-light)] mb-10">
+            <h2 className="font-[var(--secondary-font)] text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">DX TEAM TECHNOLOGY COMPETENCY</h2>
+            <p className="font-[var(--secondary-font)] text-[16px] text-center pb-10 text-[var(--color-text-light)] max-[768px]:pb-5">Empowering Innovation Through Multidisciplinary Expertise</p>
+            <p className="font-[var(--secondary-font)] text-[16px] text-center text-[var(--color-text-light)] mb-10">
               The Digital Transformation (DX) Team is a multidisciplinary group that blends creativity, engineering, business strategy, and—most importantly—customer-centric support to deliver innovative digital solutions.
             </p>
 
@@ -487,7 +487,7 @@ const competencies = [
   variants={containerVariants}
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
+  viewport={{ once: false, amount: 0.1 }}
 >
   {competencies.map((comp, index) => (
     <Motion.div 
@@ -502,10 +502,10 @@ const competencies = [
         className="w-20 h-20 mb-4 object-contain" 
       />
 
-      <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-2">
+      <h3 className="text-[20px] font-[var(--secondary-font)] font-bold text-[var(--color-secondary)] mb-2">
         {comp.title}
       </h3>
-      <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)] mb-4 flex-grow">
+      <p className="text-[16px] font-[var(--secondary-font)] text-[var(--color-text-muted)] mb-4 flex-grow">
         {comp.description}
       </p>
       <div className="w-full mt-auto flex justify-center">
@@ -534,7 +534,7 @@ const competencies = [
             className="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full m-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-4">Technologies</h3>
+            <h3 className="text-[20px] font-[var(--secondary-font)] font-bold text-[var(--color-secondary)] mb-4">Technologies</h3>
             <div className="flex flex-wrap justify-center gap-4 mb-4">
               {popupContent.map((tech, idx) => (
                 <div key={idx} className="flex flex-col items-center w-20">
@@ -543,7 +543,7 @@ const competencies = [
                     alt={tech.name} 
                     className="w-12 h-12 object-contain mb-2" 
                   />
-                  <p className="text-[14px] font-(family-name:--secondary-font) text-[var(--color-text-muted)] text-center">{tech.name}</p>
+                  <p className="text-[14px] font-[var(--secondary-font)] text-[var(--color-text-muted)] text-center">{tech.name}</p>
                 </div>
               ))}
             </div>
