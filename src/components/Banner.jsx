@@ -2,6 +2,7 @@ import React from 'react';
 import about_banner from '../assets/images/about_banner.jpg';
 import analytics_banner from '../assets/images/analytics_banner.jpg'; 
 import motionboard_banner from '../assets/images/motionboard_banner.jpg'; 
+import dx_banner from '../assets/images/dx_banner.jpg'; 
 import { useLocation } from 'react-router-dom';
 
 const Banner = () => {
@@ -24,6 +25,9 @@ const Banner = () => {
   } else if (path === '/motionboard') {
     bannerImage = motionboard_banner;
     bannerTitle = "BI AND DASHBOARDING";
+  } else if (path === '/digital-transformation') {
+    bannerImage = dx_banner;
+    bannerTitle = "DIGITAL TRANSFORMATION";
   } 
   // You can add more:
   // else if (path === '/contact') { ... }

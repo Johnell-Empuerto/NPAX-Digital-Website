@@ -99,7 +99,7 @@ const MotionBoard = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Business Intelligence and Dashboarding</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-[var(--color-primary)]">Business Intelligence and Dashboarding</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">We provide end-to-end data orchestration across on-premise, private, and cloud environments — from Excel files to big data — enabling real-time visualization and fast, efficient processing.</p>
             </Motion.div>
 
@@ -248,7 +248,7 @@ const MotionBoard = () => {
                 />
               </div>
               <div className="w-full text-center">
-                <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">On-Premise & Cloud Integration</h2>
+                <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-[var(--color-primary)]">On-Premise & Cloud Integration</h2>
                 <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">Bridge Service lets you use data from various in-house databases without sending it to the cloud. It eliminates the need to build leased-line or VPN infrastructure and is easy to introduce without VPN technical expertise.</p>
               </div>
             </Motion.div>
@@ -269,7 +269,7 @@ const MotionBoard = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 text-center">
-                <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Combine Data from Multiple Sources</h2>
+                <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-[var(--color-primary)]">Combine Data from Multiple Sources</h2>
                 <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">Data from multiple sources or systems can easily be combined for display in a single dashboard.</p>
               </div>
             </Motion.div>
@@ -282,7 +282,7 @@ const MotionBoard = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Share Reports Across the Entire Company</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-[var(--color-primary)]">Share Reports Across the Entire Company</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">Daily reports can be generated automatically from the dashboard as Excel and PowerPoint files. MotionBoard serves as an infrastructure for business reporting.</p>
             </Motion.div>
 
@@ -336,7 +336,7 @@ const MotionBoard = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Descriptive Analytics & BI Tool Online Training Course</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-[var(--color-primary)]">Descriptive Analytics & BI Tool Online Training Course</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">This course aims to provide the necessary concepts and tools on how to properly handle, process, analyze and interpret data using N-PAX BI CLOUD powered by MotionBoard.This course will help the participants on how to appropriately analyze data and create effective dashboard reports. It will generally improve the analytical literacy and skills of participants.</p>
               {/* <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]"></p> */}
               <div className="w-full mt-5 flex justify-center">
@@ -378,7 +378,7 @@ const MotionBoard = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Motionboard Demo Dashboard</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-[var(--color-primary)]">Motionboard Demo Dashboard</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">You can check the actual demo screen of MotionBoard from the following. Anyone can intuitively create a dashboard with easy operation.</p>
             </Motion.div>
 
@@ -407,7 +407,7 @@ const MotionBoard = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[38px] font-semibold text-[var(--color-primary)]">Dr.Sum vs. SQL Server Loading Speed Comparison</h2>
+              <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-[var(--color-primary)]">Dr.Sum vs. SQL Server Loading Speed Comparison</h2>
               <p className="font-(family-name:--secondary-font) text-[16px] text-[var(--color-text-light)]">Compare the loading speeds between Dr.Sum and SQL Server to see the performance differences.</p>
             </Motion.div>
 

@@ -71,7 +71,7 @@ const Middle = () => {
           </div>
 
           {/* Section Title */}
-          <h2 className="font-(family-name:--secondary-font) text-[45px] font-semibold text-center text-[var(--color-primary)]">
+          <h2 className="font-(family-name:--secondary-font) text-[45px] max-[600px]:text-[30px] font-semibold text-center text-[var(--color-primary)]">
             Our Solutions
           </h2>
           <p className="font-(family-name:--secondary-font) text-[16px] text-center pb-10 text-[var(--color-text-light)]">

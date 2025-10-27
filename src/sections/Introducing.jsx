@@ -57,7 +57,7 @@ const Introducing = () => {
           </div>
 
           <Motion.div
-            className="px-8 pb-10 pt-10"
+            className="px-8 pb-10 pt-5"
             variants={rowVariants}
             initial="hidden"
             whileInView="visible"

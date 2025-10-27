@@ -1,5 +1,8 @@
+// Update your src/App.js to include the BackgroundPulse component
+// Place it inside the Layout or App for full-page background
+
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './css/style.css';
 import Header from './components/Header';
 import Hero from './sections/Hero';
@@ -14,41 +17,52 @@ import { ThemeToggle, BackToTop } from './components/BackToTop';
 import About from './pages/About';
 import Analytics from './pages/Analytics';
 import MotionBoard from './pages/MotionBoard';
+import NotFound from './pages/NotFound';
+import DigitalTransformation from './pages/DigitalTransformation';
 
-const App = () => {
+
+const Layout = () => {
+  const location = useLocation();
+  const hideLayout = location.pathname === '/404' || location.pathname === '*';
+
   return (
-    <Router>
-      <div className='app-container'>
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <Middle />
-                <Introducing />
-                <Bottom />
-                <Testimonial />
-                <Blog />
-                <Contact />
-              </>
-            }
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/motionboard" element={<MotionBoard />} />
-          {/* You can add more pages here, e.g. */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
-        </Routes>
-        <Blog />
-        <Contact />
-        <Footer />
-        <BackToTop />
-        <ThemeToggle />
-      </div>
-    </Router>
+    <div className="app-container">
+
+      {!hideLayout && <Header />}
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Middle />
+              <Introducing />
+              <Bottom />
+              <Testimonial />
+              <Blog />
+              <Contact />
+            </>
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/motionboard" element={<MotionBoard />} />
+        <Route path="/digital-transformation" element={<DigitalTransformation />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      {!hideLayout && <Footer />}
+      <BackToTop />
+      <ThemeToggle />
+    </div>
   );
 };
+
+const App = () => (
+  <Router>
+    <Layout />
+  </Router>
+);
 
 export default App;

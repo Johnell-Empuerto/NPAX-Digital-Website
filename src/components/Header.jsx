@@ -245,7 +245,7 @@ const Header = () => {
                           </ul>
                         </div>
                       </li>
-                      <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">Digital Transformation Services</a></li>
+                      <li><a href="/digital-transformation" className="hover:text-[var(--color-sky)] transition-colors duration-300">Digital Transformation Services</a></li>
                       <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">HRIS / Payroll System</a></li>
                       <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">ERP System</a></li>
                       <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">Accounting System</a></li>
@@ -292,7 +292,7 @@ const Header = () => {
                       <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">Recent Blogs</a></li>
                       <li className="text-[var(--color-primary)] font-semibold mt-3 mb-1">News & Events</li>
                       <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">Advanced Analytics</a></li>
-                      <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">Digital Transformation</a></li>
+                      <li><a href="/digital-transformation" className="hover:text-[var(--color-sky)] transition-colors duration-300">Digital Transformation</a></li>
                       <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">Human Resource Information</a></li>
                       <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">Enterprise Resource Planning</a></li>
                       <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300">Accounting</a></li>
@@ -370,7 +370,7 @@ const Header = () => {
                         </ul>
                       )}
                     </li>
-                    <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Digital Transformation Services</a></li>
+                    <li><a href="/digital-transformation" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Digital Transformation Services</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">HRIS / Payroll System</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">ERP System</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Accounting System</a></li>
@@ -409,7 +409,7 @@ const Header = () => {
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Recent Blogs</a></li>
                     <li className="text-[var(--color-primary)] font-semibold mt-3 mb-1">News & Events</li>
                     <li><a href="/analytics" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Advanced Analytics</a></li>
-                    <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Digital Transformation</a></li>
+                    <li><a href="/digital-transformation" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Digital Transformation</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Human Resource Information</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Enterprise Resource Planning</a></li>
                     <li><a href="#" className="hover:text-[var(--color-sky)] transition-colors duration-300 block py-1">Accounting</a></li>
