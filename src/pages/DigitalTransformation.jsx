@@ -27,6 +27,41 @@ import mobiledevelopment from '../assets/icons/mobile-development.png';
 import deeplearning from '../assets/icons/deep-learning.png';
 import virtualtour from '../assets/icons/virtual-tour.png';
 
+//icons for DX TEAM TECHNOLOGY COMPETENCY 
+import restapi from '../assets/icons/programming/restapi.png';
+import html from '../assets/icons/programming/html.png';
+import css from '../assets/icons/programming/css-3.png';
+import js from '../assets/icons/programming/js.png';
+import vuejs from '../assets/icons/programming/vuejs.png';
+import react from '../assets/icons/programming/react.png';
+import reactnative from '../assets/icons/programming/react.png'; //same image only
+import angular from '../assets/icons/programming/angular.png';
+import nodejs from '../assets/icons/programming/nodejs.png';
+import python from '../assets/icons/programming/python.png';
+import sqlserver from '../assets/icons/programming/sql-server.png';
+import expressjs from '../assets/icons/programming/express-js.png';
+import tailwind from '../assets/icons/programming/tailwind.png';
+import mongodb from '../assets/icons/programming/mongodb.png';
+import flutter from '../assets/icons/programming/flutter.svg';
+import firebase from '../assets/icons/programming/firebase.png';
+import swift from '../assets/icons/programming/swift.png';
+import java from '../assets/icons/programming/java.png';
+import tensorflow from '../assets/icons/programming/tensorflow.png';
+import PyTorch from '../assets/icons/programming/PyTorch.png';
+import OpenCV from '../assets/icons/programming/OpenCV.webp';
+import Scikit_learn from '../assets/icons/programming/Scikit_learn.png';
+import unity from '../assets/icons/programming/unity.png';
+import UnrealEngine from '../assets/icons/programming/Unreal_Engine.png';
+import autodesk from '../assets/icons/programming/autodesk.png';
+import vuforia from '../assets/icons/programming/vuforia.png';
+import arduino from '../assets/icons/programming/arduino.png';
+import raspberrypi from '../assets/icons/programming/raspberrypi.webp';
+import dialogflow from '../assets/icons/programming/dialogflow-icon.webp';
+import processrobot from '../assets/icons/programming/processrobot.png';
+
+
+
+
 const rowVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -96,42 +131,79 @@ const competencies = [
     title: 'Front-End Development',
     description:
       'Crafting seamless and engaging user experiences. Our front-end developers specialize in building responsive, dynamic, and accessible interfaces that enhance usability and visual appeal.',
-    technologies: 'HTML, CSS, JavaScript, React, TailwindCSS, Vue.js',
+    technologies: [
+      { name: 'HTML', icon: html },
+      { name: 'CSS', icon: css },
+      { name: 'JavaScript', icon: js },
+      { name: 'React', icon: react },
+      { name: 'TailwindCSS', icon: tailwind },
+      { name: 'Vue.js', icon: vuejs },
+      { name: 'Angular', icon: angular },
+    ],
   },
   {
     icon: backendcoding,
     title: 'Back-End Development',
     description:
       'Building secure and scalable digital foundations. We design reliable and high-performance server-side systems that power modern applications and ensure smooth data operations.',
-    technologies: 'Node.js, Express.js, Python (Django/Flask), SQL, MongoDB, REST APIs',
+    technologies: [
+      { name: 'Node.js', icon: nodejs },
+      { name: 'Express.js', icon: expressjs },
+      { name: 'Python', icon: python },
+      { name: 'SQL', icon: sqlserver },
+      { name: 'MongoDB', icon: mongodb },
+      { name: 'REST APIs', icon: restapi },
+    ],
   },
   {
     icon: mobiledevelopment,
     title: 'Mobile Development',
     description:
       'Delivering performance and accessibility on the go. Our team builds mobile apps that combine great design with powerful functionality to meet the needs of users on any platform.',
-    technologies: 'Flutter, React Native, Swift, Kotlin, Firebase',
+    technologies: [
+      { name: 'Flutter', icon: flutter },
+      { name: 'React Native', icon: reactnative },
+      { name: 'Swift', icon: swift },
+      { name: 'Kotlin', icon: java },
+      { name: 'Firebase', icon: firebase },
+    ],
   },
   {
     icon: deeplearning,
     title: 'Deep Learning & AI',
     description:
       'Driving intelligent automation and data-driven insights. We develop AI-powered solutions that learn, adapt, and optimize processes through predictive analytics and computer vision.',
-    technologies: 'Python, TensorFlow, PyTorch, OpenCV, Scikit-learn',
+    technologies: [
+      { name: 'Python', icon: python },
+      { name: 'TensorFlow', icon: tensorflow },
+      { name: 'PyTorch', icon: PyTorch },
+      { name: 'OpenCV', icon: OpenCV },
+      { name: 'Scikit-learn', icon: Scikit_learn },
+      { name: 'Dialogflow', icon: dialogflow },
+    ],
   },
   {
     icon: virtualtour,
     title: 'Virtual & Augmented Reality',
     description:
       'Transforming imagination into immersive digital experiences. Our team creates engaging AR and VR environments for training, visualization, and virtual tours that connect the physical and digital worlds.',
-    technologies: 'Unity3D, Unreal Engine, WebXR, Blender, Three.js',
+    technologies: [
+      { name: 'Unity3D', icon: unity },
+      { name: 'Unreal Engine', icon: UnrealEngine },
+      { name: 'Autodesk', icon: autodesk },
+      { name: 'Vuforia', icon: vuforia },
+    ],
   },
   {
     icon: robotic,
     title: 'Robotics & Automation',
     description:
       'Enhancing efficiency through intelligent machines. We design and integrate smart robotic systems that automate complex tasks and improve operational productivity.',
-    technologies: 'Arduino, Raspberry Pi, ROS, ESP32, C/C++, IoT Integration',
+    technologies: [
+      { name: 'Arduino', icon: arduino },
+      { name: 'Raspberry Pi', icon: raspberrypi },
+      { name: 'Process Robot', icon: processrobot },
+    ],
   },
 ];
 
@@ -463,9 +535,20 @@ const competencies = [
             onClick={(e) => e.stopPropagation()}
           >
             <h3 className="text-[20px] font-(family-name:--secondary-font) font-bold text-[var(--color-secondary)] mb-4">Technologies</h3>
-            <p className="text-[16px] font-(family-name:--secondary-font) text-[var(--color-text-muted)] mb-4">{popupContent}</p>
+            <div className="flex flex-wrap justify-center gap-4 mb-4">
+              {popupContent.map((tech, idx) => (
+                <div key={idx} className="flex flex-col items-center w-20">
+                  <img 
+                    src={tech.icon} 
+                    alt={tech.name} 
+                    className="w-12 h-12 object-contain mb-2" 
+                  />
+                  <p className="text-[14px] font-(family-name:--secondary-font) text-[var(--color-text-muted)] text-center">{tech.name}</p>
+                </div>
+              ))}
+            </div>
             <button 
-              className="bg-[var(--color-primary)] text-white px-4 py-2 rounded hover:bg-opacity-90 transition"
+              className="btn w-full bg-[var(--color-primary)] text-white px-4 py-2 rounded-full hover:bg-transparent hover:border hover:border-[var(--color-sky)] hover:text-[var(--color-sky)] transition-all duration-200 ease-in-out cursor-pointer"
               onClick={() => setPopupContent(null)}
             >
               Close
