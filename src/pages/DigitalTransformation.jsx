@@ -58,6 +58,8 @@ import arduino from '../assets/icons/programming/arduino.png';
 import raspberrypi from '../assets/icons/programming/raspberrypi.webp';
 import dialogflow from '../assets/icons/programming/dialogflow-icon.webp';
 import processrobot from '../assets/icons/programming/processrobot.png';
+import plc from '../assets/icons/programming/plc.png';
+import esp32 from '../assets/icons/programming/esp32.png';
 
 
 
@@ -203,6 +205,8 @@ const competencies = [
       { name: 'Arduino', icon: arduino },
       { name: 'Raspberry Pi', icon: raspberrypi },
       { name: 'Process Robot', icon: processrobot },
+      { name: 'PLC', icon: plc },
+      { name: 'Esp32', icon: esp32 },
     ],
   },
 ];
