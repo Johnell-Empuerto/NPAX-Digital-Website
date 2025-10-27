@@ -1,6 +1,3 @@
-// Update your src/App.js to include the BackgroundPulse component
-// Place it inside the Layout or App for full-page background
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './css/style.css';
@@ -20,14 +17,15 @@ import MotionBoard from './pages/MotionBoard';
 import NotFound from './pages/NotFound';
 import DigitalTransformation from './pages/DigitalTransformation';
 
-
 const Layout = () => {
   const location = useLocation();
+  
+  // Hide layout only for 404 page
   const hideLayout = location.pathname === '/404' || location.pathname === '*';
 
   return (
     <div className="app-container">
-
+      {/* Header visible on all except 404 */}
       {!hideLayout && <Header />}
 
       <Routes>
@@ -40,8 +38,6 @@ const Layout = () => {
               <Introducing />
               <Bottom />
               <Testimonial />
-              <Blog />
-              <Contact />
             </>
           }
         />
@@ -52,7 +48,15 @@ const Layout = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {!hideLayout && <Footer />}
+      {/* Blog and Contact shown on all pages except 404 */}
+      {!hideLayout && (
+        <>
+          <Blog />
+          <Contact />
+          <Footer />
+        </>
+      )}
+
       <BackToTop />
       <ThemeToggle />
     </div>

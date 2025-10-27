@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion as Motion } from "framer-motion";
-import HeroVideo from "../assets/video/hero-video.mp4";
+import HeroVideo from "../assets/video/hero-videos.mp4";
 import herothumbnail from "../assets/images/hero-thumbnail.png";
 
 const containerVariants = {
